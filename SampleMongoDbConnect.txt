@@ -1,0 +1,9 @@
+Използвани материали при старт:
+
+Инсталация на MongoDb: http://forums.academy.telerik.com/109576/%D0%BA%D0%B0%D0%BA-%D0%B4%D0%B0-%D1%81%D0%B8-%D0%B8%D0%BD%D1%81%D1%82%D0%B0%D0%BB%D0%B8%D1%80%D0%B0%D0%BC%D0%B5-mongodb-%D0%BD%D0%B0-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8E%D1%82%D1%8A%D1%80%D0%B0
+
+Допълнение: При мен се наложи след копирането на ZIP файла в c:\mongodb от точка 3.
+да стартирам в конзолата mongod.exe и в още една конзола mongo.exe за тругне базата, тук е описано: http://docs.mongodb.org/manual/tutorial/install-mongodb-on-windows/
+
+За коненция е използвано демото от saykor: https://www.youtube.com/watch?v=1Bb4DGcMu_4
+

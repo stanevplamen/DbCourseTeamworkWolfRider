@@ -23,6 +23,20 @@ namespace Providers.Data
             }
         }
 
+        public static IQueryable<T> LoadData<T>(this MongoDatabase source)
+        {
+            IQueryable<T> result = null;
+            try
+            {
+                result = db.GetCollection<T>(typeof(T).Name).AsQueryable();
+            }
+            catch (MongoConnectionException ex)
+            {
+                throw new MongoCommandException("Cannot access database. Please try again later");
+            }
+            return result;
+        }
+
         public static void SaveData<T>(this MongoDatabase source, T value)
         {
             try
@@ -31,7 +45,19 @@ namespace Providers.Data
             }
             catch (MongoConnectionException ex)
             {
-                throw new MongoCommandException("Cannot access database. Please try again later");
+                throw new MongoCommandException("Cannot access database. Please try again. " + ex);
+            }
+        }
+
+        public static void DeleteData<T>(this MongoDatabase source, string id)
+        {
+            try
+            {
+                var result = db.GetCollection<T>(typeof(T).Name).Remove(Query.EQ("_id", new ObjectId(id)));
+            }
+            catch (MongoConnectionException ex)
+            {
+                throw new MongoCommandException("Cannot access database. Please try again. " + ex);
             }
         }
     }
