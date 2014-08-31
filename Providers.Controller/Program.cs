@@ -23,7 +23,7 @@ namespace Providers.Controllers
 
             var mongoContryData = GetMongoDbData(mongoDbController);
             // add mongo db data to ms sql server
-            LoadDataToMsServer(mongoContryData);
+            AddDataToMsServer(mongoContryData);
         
         }
 
@@ -31,7 +31,7 @@ namespace Providers.Controllers
         /// Loads The passed data to MS Sql Server
         /// </summary>
         /// <param name="mongoContryData"></param>
-        private static void LoadDataToMsServer(List<Country> mongoContryData)
+        private static void AddDataToMsServer(List<Country> mongoContryData)
         {
             var msSqlDb = new CarsStoreContext();
 

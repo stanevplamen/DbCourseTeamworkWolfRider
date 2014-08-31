@@ -14,6 +14,8 @@ namespace Providers.Data
     public class CarsStoreContext : DbContext
     {
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Car> Cars { get; set; }
 
         public CarsStoreContext()
             : base("CarsStoreDb")
