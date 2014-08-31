@@ -1,0 +1,10 @@
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\Providers.Data.dll.config
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\Providers.Data.dll
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\Providers.Data.pdb
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\MongoDB.Bson.dll
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\MongoDB.Driver.dll
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\MongoDB.Bson.xml
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\MongoDB.Driver.xml
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.csprojResolveAssemblyReference.cache
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.dll
+c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.pdb
