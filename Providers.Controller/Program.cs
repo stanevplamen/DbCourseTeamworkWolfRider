@@ -1,11 +1,12 @@
-﻿using Providers.Data.Library;
+﻿using CarsStore.Models;
+using Providers.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Providers.Controller
+namespace Providers.Controllers
 {
     internal class Program
     {
@@ -18,18 +19,44 @@ namespace Providers.Controller
         {
             MongoDbController mongoDbController = new MongoDbController();
             // // uncomment the first start to add the start data to MongoDb
-            // AddSampleDataToMongoDb(mongoDbController);
+            AddSampleDataToMongoDb(mongoDbController);
 
-            GetMongoDbData(mongoDbController);
+            var mongoContryData = GetMongoDbData(mongoDbController);
+            // add mongo db data to ms sql server
+            LoadDataToMsServer(mongoContryData);
         
         }
 
-        private static void GetMongoDbData(MongoDbController mongoDbController)
+        /// <summary>
+        /// Loads The passed data to MS Sql Server
+        /// </summary>
+        /// <param name="mongoContryData"></param>
+        private static void LoadDataToMsServer(List<Country> mongoContryData)
         {
-            var mongoData = mongoDbController.GetCountriesData();
-            int y = 5;
+            var msSqlDb = new CarsStoreContext();
+
+            foreach (var country in mongoContryData)
+            {
+                msSqlDb.Countries.Add(country);
+            }
+
+            msSqlDb.SaveChanges();
         }
 
+        /// <summary>
+        /// Get the data from MongoDb
+        /// </summary>
+        /// <param name="mongoDbController"></param>
+        private static List<Country> GetMongoDbData(MongoDbController mongoDbController)
+        {
+            var mongoData = mongoDbController.GetCountriesData().ToList();
+            return mongoData;
+        }
+
+        /// <summary>
+        /// Add some sample data to MongoDb
+        /// </summary>
+        /// <param name="mongoDbController"></param>
         private static void AddSampleDataToMongoDb(MongoDbController mongoDbController)
         {
             // Initializing some sample data to add to the MongoDb
@@ -49,8 +76,6 @@ namespace Providers.Controller
             {
                 mongoDbController.AddContry(pair.Key, pair.Value);
             }
-        }
-
-      
+        }     
     }
 }

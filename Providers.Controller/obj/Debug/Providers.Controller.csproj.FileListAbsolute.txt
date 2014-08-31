@@ -10,3 +10,6 @@ c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Provider
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controller.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controller.exe
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controller.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\CarsStore.Models.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\CarsStore.Models.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe.config

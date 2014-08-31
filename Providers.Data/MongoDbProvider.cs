@@ -9,6 +9,9 @@ using MongoDB.Driver.Linq;
 
 namespace Providers.Data
 {
+    /// <summary>
+    /// Mongo Db Provider
+    /// </summary>
     public static class MongoDbProvider
     {
         public static MongoDatabase db

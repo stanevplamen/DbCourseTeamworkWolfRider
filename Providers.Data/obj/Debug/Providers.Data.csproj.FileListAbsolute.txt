@@ -8,3 +8,9 @@ c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Provider
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.csprojResolveAssemblyReference.cache
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.dll
 c:\users\user\documents\visual studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\obj\Debug\Providers.Data.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\CarsStore.Models.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\EntityFramework.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\CarsStore.Models.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\EntityFramework.xml
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\EntityFramework.SqlServer.xml

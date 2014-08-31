@@ -1,12 +1,12 @@
-﻿using Providers.Data;
-using Providers.Data.Library;
+﻿using CarsStore.Models;
+using Providers.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Providers.Controller
+namespace Providers.Controllers
 {
     /// <summary>
     /// Controller which add classes and operates with MongoDbProvider static class
