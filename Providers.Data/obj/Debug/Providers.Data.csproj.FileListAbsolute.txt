@@ -14,3 +14,19 @@ C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Provider
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\RidersCoffees.Models.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Data\bin\Debug\RidersCoffees.Models.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\Providers.Data.dll.config
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\Providers.Data.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\Providers.Data.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\EntityFramework.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\MongoDB.Bson.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\MongoDB.Driver.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\RidersCoffees.Models.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\RidersCoffees.Models.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\EntityFramework.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\MongoDB.Bson.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\bin\Debug\MongoDB.Driver.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\obj\Debug\Providers.Data.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\obj\Debug\Providers.Data.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Data\obj\Debug\Providers.Data.pdb

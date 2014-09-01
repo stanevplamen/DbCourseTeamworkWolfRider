@@ -1,0 +1,5 @@
+C:\Users\Victor\Desktop\db teamwork\Handler.Excel\bin\Debug\Handler.Excel.exe.config
+C:\Users\Victor\Desktop\db teamwork\Handler.Excel\bin\Debug\Handler.Excel.exe
+C:\Users\Victor\Desktop\db teamwork\Handler.Excel\bin\Debug\Handler.Excel.pdb
+C:\Users\Victor\Desktop\db teamwork\Handler.Excel\obj\Debug\Handler.Excel.exe
+C:\Users\Victor\Desktop\db teamwork\Handler.Excel\obj\Debug\Handler.Excel.pdb

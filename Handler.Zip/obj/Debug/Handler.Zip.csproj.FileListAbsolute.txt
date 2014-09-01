@@ -1,0 +1,6 @@
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\bin\Debug\Handler.Zip.exe.config
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\bin\Debug\Handler.Zip.exe
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\bin\Debug\Handler.Zip.pdb
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\obj\Debug\Handler.Zip.csprojResolveAssemblyReference.cache
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\obj\Debug\Handler.Zip.exe
+C:\Users\Victor\Desktop\db teamwork\Handler.Zip\obj\Debug\Handler.Zip.pdb

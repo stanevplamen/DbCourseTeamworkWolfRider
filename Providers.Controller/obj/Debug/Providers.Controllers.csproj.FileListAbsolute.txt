@@ -19,3 +19,21 @@ C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Provider
 C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe.config
 C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.exe
 C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\Providers.Controllers.exe.config
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\obj\Debug\Providers.Controllers.exe
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\obj\Debug\Providers.Controllers.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\Providers.Controllers.exe
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\Providers.Controllers.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\EntityFramework.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\MongoDB.Bson.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\MongoDB.Driver.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\Providers.Data.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\RidersCoffees.Models.dll
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\RidersCoffees.Models.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\Providers.Data.pdb
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\EntityFramework.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\MongoDB.Bson.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\bin\Debug\MongoDB.Driver.xml
+C:\Users\Victor\Desktop\db teamwork\Providers.Controller\obj\Debug\Providers.Controllers.csprojResolveAssemblyReference.cache
