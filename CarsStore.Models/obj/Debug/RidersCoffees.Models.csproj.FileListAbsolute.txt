@@ -1,0 +1,8 @@
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\RidersCoffees.Models.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\RidersCoffees.Models.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Bson.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Driver.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Bson.xml
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Driver.xml
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\obj\Debug\RidersCoffees.Models.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\obj\Debug\RidersCoffees.Models.pdb

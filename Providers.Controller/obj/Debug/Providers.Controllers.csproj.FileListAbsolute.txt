@@ -1,13 +1,11 @@
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe.config
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.pdb
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\CarsStore.Models.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Bson.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Driver.dll
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Data.dll
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\CarsStore.Models.pdb
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Data.pdb
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.xml
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.SqlServer.xml
@@ -16,3 +14,8 @@ C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Provider
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.csprojResolveAssemblyReference.cache
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.exe
 C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.pdb
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\RidersCoffees.Models.dll
+C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\Providers.Controller\bin\Debug\RidersCoffees.Models.pdb
+C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe.config
+C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.exe
+C:\Users\Plamen\Documents\GitHub\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.pdb

@@ -52,7 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CarsStoreContext.cs" />
+    <Compile Include="RidersCoffeesContext.cs" />
     <Compile Include="dbSetting.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -70,9 +70,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarsStore.Models\CarsStore.Models.csproj">
+    <ProjectReference Include="..\CarsStore.Models\RidersCoffees.Models.csproj">
       <Project>{b2b62f0e-6b71-4f20-8aef-d2001d3eec39}</Project>
-      <Name>CarsStore.Models</Name>
+      <Name>RidersCoffees.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

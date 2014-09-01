@@ -5,7 +5,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providers.Data", "Providers
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providers.Controllers", "Providers.Controller\Providers.Controllers.csproj", "{75E003CE-4710-48A0-B7C5-9317BA9E6601}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarsStore.Models", "CarsStore.Models\CarsStore.Models.csproj", "{B2B62F0E-6B71-4F20-8AEF-D2001D3EEC39}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RidersCoffees.Models", "CarsStore.Models\RidersCoffees.Models.csproj", "{B2B62F0E-6B71-4F20-8AEF-D2001D3EEC39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

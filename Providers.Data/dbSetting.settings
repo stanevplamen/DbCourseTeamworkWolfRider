@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="MONGOLAB_URI" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">mongodb://127.0.0.1/cars_store_db</Value>
+      <Value Profile="(Default)">mongodb://127.0.0.1/riders_coffee_places_db</Value>
     </Setting>
   </Settings>
 </SettingsFile>

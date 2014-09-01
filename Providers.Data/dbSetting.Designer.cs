@@ -25,7 +25,7 @@ namespace Providers.Data {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://127.0.0.1/cars_store_db")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mongodb://127.0.0.1/riders_coffee_places_db")]
         public string MONGOLAB_URI {
             get {
                 return ((string)(this["MONGOLAB_URI"]));

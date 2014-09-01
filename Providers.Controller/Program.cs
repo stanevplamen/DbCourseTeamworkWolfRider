@@ -1,4 +1,4 @@
-﻿using CarsStore.Models;
+﻿using RidersCoffees.Models;
 using Providers.Data;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ namespace Providers.Controllers
 {
     internal class Program
     {
-        public static List<Country> countriesAddedList = new List<Country>();
+        public static List<CoffeePlace> coffeesAddedList = new List<CoffeePlace>();
 
         /// <summary>
         /// Main entry on the program
@@ -21,9 +21,9 @@ namespace Providers.Controllers
             // // uncomment the first start to add the start data to MongoDb
             AddSampleDataToMongoDb(mongoDbController);
 
-            var mongoContryData = GetMongoDbData(mongoDbController);
+            var mongoCoffeePlacesData = GetMongoDbData(mongoDbController);
             // add mongo db data to ms sql server
-            AddDataToMsServer(mongoContryData);
+            AddDataToMsServer(mongoCoffeePlacesData);
         
         }
 
@@ -31,13 +31,13 @@ namespace Providers.Controllers
         /// Loads The passed data to MS Sql Server
         /// </summary>
         /// <param name="mongoContryData"></param>
-        private static void AddDataToMsServer(List<Country> mongoContryData)
+        private static void AddDataToMsServer(List<CoffeePlace> mongoCoffeePlacesData)
         {
-            var msSqlDb = new CarsStoreContext();
+            var msSqlDb = new RidersCoffeesContext();
 
-            foreach (var country in mongoContryData)
+            foreach (var coffeePlace in mongoCoffeePlacesData)
             {
-                msSqlDb.Countries.Add(country);
+                msSqlDb.CoffeePlaces.Add(coffeePlace);
             }
 
             msSqlDb.SaveChanges();
@@ -47,10 +47,24 @@ namespace Providers.Controllers
         /// Get the data from MongoDb
         /// </summary>
         /// <param name="mongoDbController"></param>
-        private static List<Country> GetMongoDbData(MongoDbController mongoDbController)
+        private static List<CoffeePlace> GetMongoDbData(MongoDbController mongoDbController)
         {
-            var mongoData = mongoDbController.GetCountriesData().ToList();
-            return mongoData;
+            var mongoCoffeePlacesData = mongoDbController.GetCoffeePlacesData().ToList();
+            var mongoEmployeesData = mongoDbController.GetEmployeesData().ToList();
+
+            // attaching the relations 1:many -> CoffeePlace : Employee
+            foreach (var coffeePlace in mongoCoffeePlacesData)
+            {
+                foreach (var employee in mongoEmployeesData)
+                {
+                    if (coffeePlace._id.ToString() == employee.CoffeePlaceMongoId)
+                    {
+                        coffeePlace.Employees.Add(employee);
+                    }
+                }
+            }
+
+            return mongoCoffeePlacesData;
         }
 
         /// <summary>
@@ -60,22 +74,68 @@ namespace Providers.Controllers
         private static void AddSampleDataToMongoDb(MongoDbController mongoDbController)
         {
             // Initializing some sample data to add to the MongoDb
-            Dictionary<string, int> countriesList = new Dictionary<string, int>()
+            Dictionary<string, int> coffeesList = new Dictionary<string, int>()
 	            {
-                    {"Germany", 80000000},
-                    {"Japan", 130000000},
-                    {"France", 70000000},
-                    {"United States", 320000000},
-                    {"Russia", 150000000},
-                    {"Italy", 60000000},
-                    {"South Korea", 50000000}
+                    {"Telerik Mladost Coffee", 60},
+                    {"Telerik Nigth Bar", 110},
+                    {"Telerik Sport Center Coffee", 40},
+                    {"Telerik Breakfast Bar", 30},
+                    {"Telerik Healthy Restaurant", 45}
 	            };
 
             // Adding the sample data to the MongoDb
-            foreach (KeyValuePair<string, int> pair in countriesList)
+            foreach (KeyValuePair<string, int> pair in coffeesList)
             {
-                mongoDbController.AddContry(pair.Key, pair.Value);
+                mongoDbController.AddCoffeePlace(pair.Key, pair.Value);
             }
+
+            // here we get the already stored data from mongodb
+            foreach (var coffeePlace in coffeesAddedList)
+            {
+
+                switch (coffeePlace.Name)
+                {
+                    case "Telerik Mladost Coffee":
+                        var emloyeesListOne = new List<Tuple<string, string, string, string, int, decimal>>
+                        {
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Hristina", "Kovacheva", "waitress", 25, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Gergana", "Dimitrova", "waitress", 20, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Svoboda", "Ivanova", "waitress", 23, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Denitsa", "Hristova", "manager", 28, 1600.0m)
+                        };
+
+                        mongoDbController.AddEmployees(emloyeesListOne);
+                        break;
+                    case "Telerik Nigth Bar":
+                        var emloyeesListTwo = new List<Tuple<string, string, string, string, int, decimal>>
+                        {
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Ivan", "Georgiev", "barman", 25, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Hristo", "Stefanov", "barman", 20, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Cvetomir", "Kovachev", "barman", 23, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Kalina", "Dimcheva", "waitress", 23, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Cveta", "Stoichnova", "waitress", 21, 1300.0m),
+                            new Tuple<string,string, string, string, int, decimal>(coffeePlace._id.ToString(), "Monika", "Ilieva", "manager", 32, 1600.0m)
+                        };
+
+                        mongoDbController.AddEmployees(emloyeesListTwo);
+                        break;
+                    case "Telerik Sport Center Coffee":
+                        Console.WriteLine("Case 2");
+                        break;
+                    case "Telerik Breakfast Bar":
+                        Console.WriteLine("Case 2");
+                        break;
+                    case "Telerik Healthy Restaurant":
+                        Console.WriteLine("Case 2");
+                        break;
+                    default:
+                        throw new NotImplementedException("The given coffee do not exists");
+                        break;
+                }
+
+            }
+
+           
         }     
     }
 }
