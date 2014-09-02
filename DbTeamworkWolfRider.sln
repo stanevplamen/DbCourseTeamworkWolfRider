@@ -16,7 +16,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.Models", "CupOfCoffee.Models\CupOfCoffee.Models.csproj", "{ACEAF5E1-8E75-4A63-AAD5-72BEF15C42A3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.Data", "CupOfCoffee.Data\CupOfCoffee.Data.csproj", "{86A4D945-FE66-48E3-847C-1A131FC1B23F}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Creator.Pdf", "Creator.Pdf\Creator.Pdf.csproj", "{076DE5FA-1E33-4220-BF66-CD8FE724531F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.MySQL.Models", "CupOfCoffee.MySQL.Models\CupOfCoffee.MySQL.Models.csproj", "{6F9C2621-695C-4BDE-881B-157DCAA75C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.MySQL.Client", "CupOfCoffee.MySQL.Client\CupOfCoffee.MySQL.Client.csproj", "{48632341-FF18-49A9-AB1A-8956FABC177E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -56,6 +61,14 @@ Global
 		{076DE5FA-1E33-4220-BF66-CD8FE724531F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{076DE5FA-1E33-4220-BF66-CD8FE724531F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{076DE5FA-1E33-4220-BF66-CD8FE724531F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F9C2621-695C-4BDE-881B-157DCAA75C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48632341-FF18-49A9-AB1A-8956FABC177E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48632341-FF18-49A9-AB1A-8956FABC177E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48632341-FF18-49A9-AB1A-8956FABC177E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48632341-FF18-49A9-AB1A-8956FABC177E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
