@@ -1,0 +1,14 @@
+﻿<Window x:Class="CupOfCoffee.UI.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:View="clr-namespace:CupOfCoffee.UI.WPF.View"
+        ResizeMode="CanMinimize"    
+        Title="Cup Of Coffee" Height="539" Width="816">
+    <Canvas x:Name="mainContainer">
+        <Canvas x:Name="userControlContainer" Height="auto">
+            <View:StartingControl x:Name="startingUserControl" Visibility="Visible"/>
+            <View:Menu x:Name="menu" Visibility="Hidden"/>
+            <View:OrdersLoader x:Name="ordersLoader" Visibility="Hidden"/>
+        </Canvas>
+    </Canvas>
+</Window>
