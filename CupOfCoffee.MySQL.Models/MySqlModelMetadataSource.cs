@@ -39,8 +39,8 @@ namespace CupOfCoffee.MySQL.Models
                     ProductCategory = report.ProductCategory,
                     TotalIncome = report.TotalIncome,
                     TotalQuantitySold = report.TotalQuantitySold
-                });
-            reportMapping.HasProperty(r => r.ReportID).IsIdentity();
+                }).ToTable("reports");
+            reportMapping.HasProperty(r => r.ReportID).IsIdentity(KeyGenerator.HighLow);
 
             mappingConfigurations.Add(reportMapping);
 			

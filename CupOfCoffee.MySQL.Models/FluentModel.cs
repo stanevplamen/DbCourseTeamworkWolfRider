@@ -60,8 +60,8 @@ namespace CupOfCoffee.MySQL.Models
 		public static BackendConfiguration GetBackendConfiguration()
 		{
 			BackendConfiguration backend = new BackendConfiguration();
-			backend.Backend = "MsSql";
-			backend.ProviderName = "System.Data.SqlClient";
+			backend.Backend = "mysql";
+            backend.ProviderName = "MySql.Data.MySqlClient";
 		
 			CustomizeBackendConfiguration(ref backend);
 		
