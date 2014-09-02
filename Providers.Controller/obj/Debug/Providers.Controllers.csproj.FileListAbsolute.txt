@@ -84,3 +84,25 @@ D:\Google Диск\Databases\Teamwork\DbCourseTeamworkWolfRider\Providers.Contro
 D:\Google Диск\Databases\Teamwork\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Bson.xml
 D:\Google Диск\Databases\Teamwork\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Driver.xml
 D:\Google Диск\Databases\Teamwork\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.csprojResolveAssemblyReference.cache
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe.config
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.exe
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\obj\Debug\Providers.Controllers.csprojResolveAssemblyReference.cache
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.exe
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Controllers.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\CupOfCoffee.Data.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\CupOfCoffee.Models.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.SqlServer.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Bson.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Driver.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Data.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\RidersCoffees.Models.dll
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\RidersCoffees.Models.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\CupOfCoffee.Data.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\CupOfCoffee.Models.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\Providers.Data.pdb
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.xml
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\EntityFramework.SqlServer.xml
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Bson.xml
+D:\Documents\Telerik Courses homeworks\GitHub Local Repository\DbCourseTeamworkWolfRider\Providers.Controller\bin\Debug\MongoDB.Driver.xml
