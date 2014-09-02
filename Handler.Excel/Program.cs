@@ -1,6 +1,8 @@
-﻿namespace Handler.Excel
+﻿
+namespace Handler.Excel
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.OleDb;
 
     public class Program
@@ -10,8 +12,11 @@
             ParseExcelFile(@"..\..\..\", @"data\extracted\data.xlsx", "Products");
         }
 
+        // TODO: Must add return value!
+        //static public list<string> ParseExcelFile(string _path, string _fileName, string _requiredSheet)
         static public void ParseExcelFile(string _path, string _fileName, string _requiredSheet)
         {
+            List<string> output = new List<string>();
             string requiredSheet = _requiredSheet + "$";
             OleDbConnectionStringBuilder connectionBuilder = new OleDbConnectionStringBuilder();
             connectionBuilder.Provider = "Microsoft.ACE.OLEDB.12.0";
@@ -43,6 +48,8 @@
                     OleDbDataReader data = command.ExecuteReader();
                     while (data.Read())
                     {
+                        //TODO: This has to be changed according to the used Excel file. Must add return value!
+                        output.Add(string.Format("Id: {0}, Product name: {1}, Quantity: {2}, Price: {3:C0}", data["Id"], data["Product Name"], data["Quantity"], data["Price"]));
                         Console.WriteLine("Id: {0}, Product name: {1}, Quantity: {2}, Price: {3:C0}", data["Id"], data["Product Name"], data["Quantity"], data["Price"]);
                     }
                 }
@@ -52,6 +59,8 @@
                     //throw new InvalidOperationException("Could not parse excel file for parsing -> InvalidOperationException");
                 }
             }
+
+            // return output
         }
     }
 }
