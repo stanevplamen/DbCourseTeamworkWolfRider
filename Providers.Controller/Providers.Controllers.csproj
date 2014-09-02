@@ -67,6 +67,14 @@
       <Project>{b2b62f0e-6b71-4f20-8aef-d2001d3eec39}</Project>
       <Name>RidersCoffees.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CupOfCoffee.Data\CupOfCoffee.Data.csproj">
+      <Project>{86a4d945-fe66-48e3-847c-1a131fc1b23f}</Project>
+      <Name>CupOfCoffee.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CupOfCoffee.Models\CupOfCoffee.Models.csproj">
+      <Project>{aceaf5e1-8e75-4a63-aad5-72bef15c42a3}</Project>
+      <Name>CupOfCoffee.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Providers.Data\Providers.Data.csproj">
       <Project>{1d3acbda-d12a-4992-ac12-9e256b2ad33d}</Project>
       <Name>Providers.Data</Name>

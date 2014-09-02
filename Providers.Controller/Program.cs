@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CupOfCoffee.Data;
 
 namespace Providers.Controllers
 {
@@ -17,13 +18,16 @@ namespace Providers.Controllers
         /// </summary>
         static void Main()
         {
+            var db = new CupOfCoffeeContext();
+            var categories = db.Categories.ToList();
+
             MongoDbController mongoDbController = new MongoDbController();
             // // uncomment the first start to add the start data to MongoDb
-            AddSampleDataToMongoDb(mongoDbController);
+           //AddSampleDataToMongoDb(mongoDbController);
 
-            var mongoCoffeePlacesData = GetMongoDbData(mongoDbController);
+           var mongoCoffeePlacesData = GetMongoDbData(mongoDbController);
             // add mongo db data to ms sql server
-            AddDataToMsServer(mongoCoffeePlacesData);
+           AddDataToMsServer(mongoCoffeePlacesData);
         
         }
 

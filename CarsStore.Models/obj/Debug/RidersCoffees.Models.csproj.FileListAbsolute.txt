@@ -12,6 +12,5 @@ C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\bin\Debug\MongoDB.Bson.dll
 C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\bin\Debug\MongoDB.Driver.dll
 C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\bin\Debug\MongoDB.Bson.xml
 C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\bin\Debug\MongoDB.Driver.xml
-C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\obj\Debug\RidersCoffees.Models.csprojResolveAssemblyReference.cache
 C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\obj\Debug\RidersCoffees.Models.dll
 C:\Users\Victor\Desktop\db teamwork\CarsStore.Models\obj\Debug\RidersCoffees.Models.pdb

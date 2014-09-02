@@ -26,43 +26,43 @@
                 System.IO.Compression.ZipFile.ExtractToDirectory(filePath, extractPath);
                 return true;
             }
-            catch (ArgumentException fe)
+            catch (ArgumentException)
             {
                 Console.WriteLine("Could not unzip file -> ArgumentException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> argument exception");
             }
-            catch (PathTooLongException fe)
+            catch (PathTooLongException)
             {
                 Console.WriteLine("Could not unzip file -> PathTooLongException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> PathTooLongException");
             }
-            catch (DirectoryNotFoundException fe)
+            catch (DirectoryNotFoundException)
             {
                 Console.WriteLine("Could not unzip file -> DirectoryNotFoundException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> DirectoryNotFoundException");
             }
-            catch (IOException fe)
+            catch (IOException)
             {
                 Console.WriteLine("Could not unzip file -> IOException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> IOException");
             }
-            catch (UnauthorizedAccessException fe)
+            catch (UnauthorizedAccessException)
             {
                 Console.WriteLine("Could not unzip file -> UnauthorizedAccessException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> UnauthorizedAccessException");
             }
-            catch (NotSupportedException fe)
+            catch (NotSupportedException)
             {
                 Console.WriteLine("Could not unzip file -> NotSupportedException");
                 return false;
                 //throw new ArgumentException("Could not unzip file -> NotSupportedException");
             }
-            catch (InvalidDataException fe)
+            catch (InvalidDataException)
             {
                 Console.WriteLine("Could not unzip file -> InvalidDataException");
                 return false;
