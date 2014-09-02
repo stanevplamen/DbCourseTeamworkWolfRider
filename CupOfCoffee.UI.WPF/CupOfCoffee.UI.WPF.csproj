@@ -138,6 +138,15 @@
       <Name>Providers.Controllers</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cafe.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cup-of-coffee-ppt-backgrounds-powerpoint.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\cup-of-coffee-menu.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -5,7 +5,10 @@
         ResizeMode="CanMinimize"    
         Title="Cup Of Coffee" Height="539" Width="816">
     <Canvas x:Name="mainContainer">
-        <Canvas x:Name="userControlContainer" Height="auto">
+        <Canvas.Background>
+            <ImageBrush ImageSource="Images/cup-of-coffee-menu.jpg"/>
+        </Canvas.Background>
+        <Canvas x:Name="userControlContainer" Height="auto" Background="Black">
             <View:StartingControl x:Name="startingUserControl" Visibility="Visible"/>
             <View:Menu x:Name="menu" Visibility="Hidden"/>
             <View:OrdersLoader x:Name="ordersLoader" Visibility="Hidden"/>

@@ -6,10 +6,41 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Canvas Height="500" Width="800">
-        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Click="btnBrowse_Click" Canvas.Top="69" Height="35" Canvas.Left="514" FontSize="20" Foreground="Black">
+        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Click="btnBrowse_Click" Canvas.Top="358" Height="53" Canvas.Left="77" FontSize="25" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
         </Button>
-        <Button x:Name="btnExtract" Content="Extract" Canvas.Left="514" Canvas.Top="157" Width="130" Height="53" Click="btnExtract_Click" FontSize="20"/>
-        <TextBlock x:Name="txtPath" Canvas.Left="54" TextWrapping="Wrap" Canvas.Top="69" Height="35" Width="431"/>
-        <Button x:Name="btnOrderLoader" Content="Load orders" Width="130" Canvas.Left="514" Canvas.Top="247" Height="49" FontSize="20" Click="btnOrderLoader_Click"/>
+        <Button x:Name="btnExtract" Content="Extract" Canvas.Left="337" Canvas.Top="358" Width="161" Height="53" Click="btnExtract_Click" FontSize="25" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="txtPath" Canvas.Left="170" TextWrapping="Wrap" Canvas.Top="235" Height="53" Width="555" VerticalAlignment="Center" ScrollViewer.CanContentScroll="True" FontSize="20" Background="White"/>
+        <Button x:Name="btnOrderLoader" Content="Load orders" Width="156" Canvas.Left="595" Canvas.Top="358" Height="53" FontSize="25" Click="btnOrderLoader_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Label Content="Path:" Canvas.Left="61" Canvas.Top="221" Height="53" Width="104" FontSize="40" HorizontalAlignment="Center" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" Foreground="White"/>
+        <TextBlock x:Name="txtTitle" Canvas.Left="77" TextWrapping="Wrap" Canvas.Top="10" Height="157" Width="664" FontSize="100" Foreground="White"><Run Text="Cup Of Coffee"/></TextBlock>
+        <Button x:Name="btnBack" Content="Back" Canvas.Top="460" Width="800" Height="40" FontSize="25" Click="btnBack_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
     </Canvas>
 </UserControl>

@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace CupOfCoffee.UI.WPF.View
+{
+    using System;
+using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
-namespace CupOfCoffee.UI.WPF.View
-{
     /// <summary>
     /// Interaction logic for Menu.xaml
     /// </summary>
@@ -27,9 +17,7 @@ namespace CupOfCoffee.UI.WPF.View
 
         private void btnDataLoader_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: invoke method to load data, It must return true or false
-
-
+            //TODO: not implemented
             if (true)
             {
                 MessageBox.Show("The orders were loaded successfully!",
@@ -55,29 +43,32 @@ namespace CupOfCoffee.UI.WPF.View
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: not implemented
         }
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: not implemented
+            // Sample test to run Adobe Reader. Change the path after implementing logic
+            var pathToPdf = @"..\..\..\Sample-Aggregated-Sales-Report.pdf";
+            var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
+            var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pathToPdf);
+            Process.Start(adobeInfo);
         }
 
         private void btnProductIncomeCalculator_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: not implemented
         }
 
         private void btnSoldProductDisplayer_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: not implemented
         }
 
         private void btnTotalProfitCalculator_Click(object sender, RoutedEventArgs e)
         {
-
+            //TODO: not implemented
         }
-
-
     }
 }

@@ -6,14 +6,63 @@
              mc:Ignorable="d" 
              d:DesignHeight="500" d:DesignWidth="800">
     <Canvas Height="500" Width="800">
-        <Button x:Name="btnOrderLoader" Content="Load orders" Canvas.Left="10" Canvas.Top="273" Width="380" Height="48" FontSize="30" Click="btnOrderLoader_Click"/>
-        <TextBlock x:Name="txtTitle" Canvas.Left="77" TextWrapping="Wrap" Text="Cup Of Coffee" Canvas.Top="10" Height="157" Width="664" FontSize="100"/>
-        <Button x:Name="btnSalaryCalculator" Content="Calculate salaries" Canvas.Left="410" Canvas.Top="210" Width="380" Height="48" FontSize="30" Click="btnSalaryCalculator_Click"/>
-        <Button x:Name="btnFeedbackLoader" Content="Load feedbacks" Canvas.Left="10" Canvas.Top="335" Width="380" Height="48" FontSize="30" Click="btnFeedbackLoader_Click" />
-        <Button x:Name="btnDataLoader" Content="Load data" Canvas.Left="10" Canvas.Top="210" Width="380" Height="48" FontSize="30" Click="btnDataLoader_Click" />
-        <Button x:Name="btnProductIncomeCalculator" Content="Calculate products income" Canvas.Left="410" Canvas.Top="273" Width="380" Height="48" FontSize="30" Click="btnProductIncomeCalculator_Click" />
-        <Button x:Name="btnSoldProductDisplayer" Content="Show sold products" Canvas.Left="410" Canvas.Top="335" Width="380" Height="48" FontSize="30" Click="btnSoldProductDisplayer_Click" />
-        <Button x:Name="btnTotalProfitCalculator" Content="Calculate total profit" Canvas.Left="208" Canvas.Top="411" Width="380" Height="48" FontSize="30" Click="btnTotalProfitCalculator_Click" />
+        <Button x:Name="btnOrderLoader" Content="Load orders" Canvas.Left="10" Canvas.Top="273" Width="380" Height="48" FontSize="30" Click="btnOrderLoader_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="txtTitle" Canvas.Left="77" TextWrapping="Wrap" Canvas.Top="10" Height="157" Width="664" FontSize="100" Foreground="White"><Run Text="Cup Of Coffee"/></TextBlock>
+        <Button x:Name="btnSalaryCalculator" Content="Calculate salaries" Canvas.Left="410" Canvas.Top="210" Width="380" Height="48" FontSize="30" Click="btnSalaryCalculator_Click" Foreground="White">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnFeedbackLoader" Content="Load feedbacks" Canvas.Left="10" Canvas.Top="335" Width="380" Height="48" FontSize="30" Click="btnFeedbackLoader_Click" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnDataLoader" Content="Load data" Canvas.Left="10" Canvas.Top="210" Width="380" Height="48" FontSize="30" Click="btnDataLoader_Click" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnProductIncomeCalculator" Content="Calculate products income" Canvas.Left="410" Canvas.Top="273" Width="380" Height="48" FontSize="30" Click="btnProductIncomeCalculator_Click" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnSoldProductDisplayer" Content="Show sold products" Canvas.Left="410" Canvas.Top="335" Width="380" Height="48" FontSize="30" Click="btnSoldProductDisplayer_Click" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnTotalProfitCalculator" Content="Calculate total profit" Canvas.Left="208" Canvas.Top="411" Width="380" Height="48" FontSize="30" Click="btnTotalProfitCalculator_Click" Foreground="White" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF00FF68" Offset="0"/>
+                    <GradientStop Color="#FF51B003" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Canvas>
 </UserControl>

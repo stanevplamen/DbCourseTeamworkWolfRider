@@ -1,22 +1,11 @@
-﻿
-using Providers.Controllers.ReportLoader;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace CupOfCoffee.UI.WPF.View
+﻿namespace CupOfCoffee.UI.WPF.View
 {
+    using Providers.Controllers.ReportLoader;
+    using System;
+    using System.Collections.Generic;
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for OrdersLoader.xaml
     /// </summary>
@@ -46,43 +35,15 @@ namespace CupOfCoffee.UI.WPF.View
             {
                 this.fileName = this.dlg.SafeFileName;
                 this.filePath = this.dlg.FileName.Replace(fileName, string.Empty);
+                this.txtPath.Text = this.dlg.FileName;
             }
         }
 
         private void btnExtract_Click(object sender, RoutedEventArgs e)
         {
-            var result = Archive.Extract(this.filePath, this.fileName, defaultFolder);
-
-            if (result)
+            if (this.fileName != string.Empty && this.filePath != string.Empty)
             {
-                MessageBox.Show("Extracted successfully the zip archive!",
-                    "Extracted successfully",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Cannot extract the file!",
-                   "Extracted failed",
-                   MessageBoxButton.OK,
-                   MessageBoxImage.Error);
-            }
-        }
-
-        private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
-        {
-            var reportsFolder = this.filePath + defaultFolder;
-            var fileExtension = "*.xls";
-            var files = new List<string>();
-
-            ReportFinder.TraverseDirectory(reportsFolder, fileExtension, files);
-
-            var productsSheet = "Products";
-            var orderSheet = "Order";
-
-            foreach (var file in files)
-            {
-                var result = ExcelParser.Parse(file, productsSheet, orderSheet);
+                var result = Archive.Extract(this.filePath, this.fileName, defaultFolder);
 
                 if (result)
                 {
@@ -99,6 +60,78 @@ namespace CupOfCoffee.UI.WPF.View
                        MessageBoxImage.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show("There is no zip archive chosen!",
+                     "Warning",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Warning);
+            }
+        }
+
+        private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.fileName != string.Empty && this.filePath != string.Empty)
+            {
+                var reportsFolder = this.filePath + defaultFolder;
+                var fileExtension = "*.xls";
+                var files = new List<string>();
+
+                ReportFinder.TraverseDirectory(reportsFolder, fileExtension, files);
+
+                var productsSheet = "Products";
+                var orderSheet = "Order";
+                var loadedComplete = true;
+                
+                foreach (var file in files)
+                {
+                    var result = ExcelParser.Parse(file, productsSheet, orderSheet);
+
+                    if (!result)
+                    {
+                        loadedComplete = false;
+                    }
+                }
+
+                if (loadedComplete)
+                {
+                    MessageBox.Show("Successfully loaded the orders!",
+                        "Loaded successfully",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+                }
+                else
+                {
+                    MessageBox.Show("One or more orders cannot be loaded!",
+                       "Loaded failed",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("There is no zip archive chosen!",
+                       "Warning",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Warning);
+            }
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            this.ClearContent();
+
+            this.Visibility = Visibility.Hidden;
+            var mainWindow = StartWindow.GetMainWindow(this);
+            mainWindow.menu.Visibility = Visibility.Visible;
+        }
+        
+        private void ClearContent()
+        {
+            this.dlg = null;
+            this.filePath = string.Empty;
+            this.fileName = string.Empty;
+            this.txtPath.Text = string.Empty;
         }
     }
 }
