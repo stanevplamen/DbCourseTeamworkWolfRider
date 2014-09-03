@@ -13,7 +13,7 @@ namespace CupOfCoffee.Data
         public CupOfCoffeeContext()
             : base("name=CupOfCoffeeDb")
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CupOfCoffeeContext, Configuration>());
+            Database.SetInitializer(new DropCreateDatabaseAlways<CupOfCoffeeContext>());
         }
 
         public virtual IDbSet<CustomerFeedback> CustomerFeedbacks { get; set; }

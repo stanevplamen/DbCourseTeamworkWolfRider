@@ -1,5 +1,6 @@
 ﻿namespace TestProject
 {
+    using CupOfCoffee.Controllers.DataLoader;
     using CupOfCoffee.Data;
     using CupOfCoffee.Models;
     using System;
@@ -11,9 +12,7 @@
     {
         static void Main(string[] args)
         {
-            DatabasePopulator.Seed();
-
-            CupOfCoffeeContext db = new CupOfCoffeeContext();
+            MongoDbExtractor.ExtractDataToSqlServer();
         }
     }
 }

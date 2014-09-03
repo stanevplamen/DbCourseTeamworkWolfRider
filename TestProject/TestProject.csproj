@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CupOfCoffee.Controllers\CupOfCoffee.Controllers.csproj">
+      <Project>{667f9fff-8d13-458c-993d-9e5779e08ce4}</Project>
+      <Name>CupOfCoffee.Controllers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CupOfCoffee.Data\CupOfCoffee.Data.csproj">
       <Project>{86a4d945-fe66-48e3-847c-1a131fc1b23f}</Project>
       <Name>CupOfCoffee.Data</Name>
