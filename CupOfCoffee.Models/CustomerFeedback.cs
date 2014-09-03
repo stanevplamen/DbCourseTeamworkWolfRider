@@ -1,5 +1,6 @@
 namespace CupOfCoffee.Models
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -7,6 +8,7 @@ namespace CupOfCoffee.Models
 
     public class CustomerFeedback
     {
+        [BsonId]
         public int Id { get; set; }
 
         public int? CustomerId { get; set; }

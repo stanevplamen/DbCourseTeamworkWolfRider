@@ -1,5 +1,6 @@
 namespace CupOfCoffee.Models
 {
+    using MongoDB.Bson.Serialization.Attributes;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
@@ -14,6 +15,7 @@ namespace CupOfCoffee.Models
             employees = new HashSet<Employee>();
         }
 
+        [BsonId]
         public int Id { get; set; }
 
         [Required]
