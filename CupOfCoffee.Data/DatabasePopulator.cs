@@ -65,7 +65,6 @@ namespace CupOfCoffee.Data
                 new Category { Id = 7, Name = "Vegerables"},
                 new Category { Id = 8, Name = "Fruits"},
                 new Category { Id = 9, Name = "Nuts"},
-                new Category { Id = 9, Name = "Nuts"},
             };
 
             return categories;
@@ -159,7 +158,7 @@ namespace CupOfCoffee.Data
                 new Position { Id = 6, Name = "Traider", BaseSalary = 1500m},
                 new Position { Id = 7, Name = "Buyer", BaseSalary = 1500m},
                 new Position { Id = 8, Name = "Hostess", BaseSalary = 1100m},
-                new Position { Id = 8, Name = "Barman", BaseSalary = 1100m},
+                new Position { Id = 9, Name = "Barman", BaseSalary = 1100m},
             };
 
             return positions;
