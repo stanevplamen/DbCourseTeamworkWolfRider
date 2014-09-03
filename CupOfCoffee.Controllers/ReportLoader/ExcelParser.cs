@@ -1,13 +1,10 @@
-﻿namespace Providers.Controllers.ReportLoader
+﻿namespace CupOfCoffee.Controllers.ReportLoader
 {
+    using System;
+    using System.Data.OleDb;
+
     using CupOfCoffee.Data;
     using CupOfCoffee.Models;
-    using System;
-    using System.Collections.Generic;
-    using System.Data.OleDb;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
     public static class ExcelParser
     {
@@ -107,7 +104,6 @@
                     }
                     catch (Exception)
                     {
-                        throw;
                         Console.WriteLine("Could not parse excel file for parsing -> InvalidOperationException");
                         return false;
                         //throw new InvalidOperationException("Could not parse excel file for parsing -> InvalidOperationException");

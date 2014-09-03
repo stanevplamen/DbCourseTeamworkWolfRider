@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{75E003CE-4710-48A0-B7C5-9317BA9E6601}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{667F9FFF-8D13-458C-993D-9E5779E08CE4}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Providers.Controllers</RootNamespace>
-    <AssemblyName>Providers.Controllers</AssemblyName>
+    <RootNamespace>CupOfCoffee.Controllers</RootNamespace>
+    <AssemblyName>CupOfCoffee.Controllers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,18 +31,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Bson">
-      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
-    </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Driver.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -55,19 +52,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MongoDbController.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportLoader\Archive.cs" />
+    <Compile Include="ReportLoader\ExcelParser.cs" />
+    <Compile Include="ReportLoader\ReportFinder.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CarsStore.Models\RidersCoffees.Models.csproj">
-      <Project>{b2b62f0e-6b71-4f20-8aef-d2001d3eec39}</Project>
-      <Name>RidersCoffees.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CupOfCoffee.Data\CupOfCoffee.Data.csproj">
       <Project>{86a4d945-fe66-48e3-847c-1a131fc1b23f}</Project>
       <Name>CupOfCoffee.Data</Name>
@@ -76,10 +66,10 @@
       <Project>{aceaf5e1-8e75-4a63-aad5-72bef15c42a3}</Project>
       <Name>CupOfCoffee.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Providers.Data\Providers.Data.csproj">
-      <Project>{1d3acbda-d12a-4992-ac12-9e256b2ad33d}</Project>
-      <Name>Providers.Data</Name>
-    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

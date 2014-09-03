@@ -1,6 +1,6 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
-    using Providers.Controllers.ReportLoader;
+    using CupOfCoffee.Controllers.ReportLoader;
     using System;
     using System.Collections.Generic;
     using System.Windows;

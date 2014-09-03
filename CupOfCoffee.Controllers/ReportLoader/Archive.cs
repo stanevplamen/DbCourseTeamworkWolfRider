@@ -1,4 +1,4 @@
-﻿namespace Providers.Controllers.ReportLoader
+﻿namespace CupOfCoffee.Controllers.ReportLoader
 {
     using System;
     using System.Collections.Generic;
