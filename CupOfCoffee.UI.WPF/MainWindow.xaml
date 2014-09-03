@@ -12,6 +12,7 @@
             <View:StartingControl x:Name="startingUserControl" Visibility="Visible"/>
             <View:Menu x:Name="menu" Visibility="Hidden"/>
             <View:OrdersLoader x:Name="ordersLoader" Visibility="Hidden"/>
+            <View:FeedbackLoader x:Name="feedbackLoader" Visibility="Hidden"/>
         </Canvas>
     </Canvas>
 </Window>

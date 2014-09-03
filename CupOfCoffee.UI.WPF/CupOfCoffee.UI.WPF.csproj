@@ -68,6 +68,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="StartWindow.cs" />
+    <Compile Include="View\FeedbackLoader.xaml.cs">
+      <DependentUpon>FeedbackLoader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Menu.xaml.cs">
       <DependentUpon>Menu.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\FeedbackLoader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Menu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

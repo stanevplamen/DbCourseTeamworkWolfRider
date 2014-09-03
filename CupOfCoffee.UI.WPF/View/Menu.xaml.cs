@@ -49,19 +49,9 @@
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
         {
-            string pathToFile = string.Empty;
-            CupOfCoffeeContext context = new CupOfCoffeeContext();
-            var feedbacks = XmlParser.GenerateFeedbacksFromXml(pathToFile);
-            foreach (var feedback in feedbacks)
-            {
-                context.CustomerFeedbacks.Add(feedback);
-            }
-            context.SaveChanges();
-
-            foreach (var feedback in feedbacks)
-            {
-                string feedbackAsJson = JsonConvert.SerializeObject(feedback);
-            }
+            this.Visibility = Visibility.Hidden;
+            var mainWindow = StartWindow.GetMainWindow(this);
+            mainWindow.feedbackLoader.Visibility = Visibility.Visible;
         }
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
