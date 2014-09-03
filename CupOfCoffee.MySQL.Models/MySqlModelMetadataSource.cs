@@ -30,7 +30,7 @@ namespace CupOfCoffee.MySQL.Models
 		{
 			List<MappingConfiguration> mappingConfigurations = new List<MappingConfiguration>();
 
-            var reportMapping = new MappingConfiguration<Report>();
+            var reportMapping = new MappingConfiguration<ProductReport>();
             reportMapping.MapType(report => new
                 {
                     ReportId = report.ReportID,

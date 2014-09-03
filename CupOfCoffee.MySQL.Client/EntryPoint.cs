@@ -9,12 +9,12 @@
     {
         static void Main(string[] args)
         {
-            ICollection<IReport> reps = new List<IReport>() 
+            ICollection<IProductReport> reps = new List<IProductReport>() 
             {
-                new Report(){ ProductID = 1, ProductName="Nova Brasilia", ProductCategory="Coffee", TotalIncome= 3567.5m, TotalQuantitySold=3000 },
-                new Report(){ ProductID = 2, ProductName="Nestea", ProductCategory="Tea", TotalIncome= 356.5m, TotalQuantitySold=300 },
-                new Report(){ ProductID = 3, ProductName="Zagorka", ProductCategory="Beer", TotalIncome= 242.4m, TotalQuantitySold=100 },
-                new Report(){ ProductID = 4, ProductName="Jack", ProductCategory="Whiskey", TotalIncome= 5000, TotalQuantitySold=1000 }
+                new ProductReport(){ ProductID = 1, ProductName="Nova Brasilia", ProductCategory="Coffee", TotalIncome= 3567.5m, TotalQuantitySold=3000 },
+                new ProductReport(){ ProductID = 2, ProductName="Nestea", ProductCategory="Tea", TotalIncome= 356.5m, TotalQuantitySold=300 },
+                new ProductReport(){ ProductID = 3, ProductName="Zagorka", ProductCategory="Beer", TotalIncome= 242.4m, TotalQuantitySold=100 },
+                new ProductReport(){ ProductID = 4, ProductName="Jack", ProductCategory="Whiskey", TotalIncome= 5000, TotalQuantitySold=1000 }
             };
 
             UpdateDatabase();
@@ -22,7 +22,7 @@
             AddReports(reps, context);
         }
 
-        public static void AddReports(ICollection<IReport> reports, MySqlModel context)
+        public static void AddReports(ICollection<IProductReport> reports, MySqlModel context)
         {
             using (context)
             {

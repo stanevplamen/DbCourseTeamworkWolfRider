@@ -58,8 +58,6 @@
     <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MySqlReports\IProductReport.cs" />
-    <Compile Include="MySqlReports\ProductReport.cs" />
     <Compile Include="MySqlReports\ProductsReportsLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportLoader\Archive.cs" />

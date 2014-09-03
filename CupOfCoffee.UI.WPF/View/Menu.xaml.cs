@@ -61,7 +61,7 @@
 
         private void btnProductIncomeCalculator_Click(object sender, RoutedEventArgs e)
         {
-            string path = "";
+            string path = "..\\..\\..\\JSONReports\\";
             CupOfCoffeeContext context = new CupOfCoffeeContext();
             var reports = ProductsReportsLoader.GetProductsSaleInfo(context);
             ProductsReportsLoader.GenerateJsonReports(reports, path);

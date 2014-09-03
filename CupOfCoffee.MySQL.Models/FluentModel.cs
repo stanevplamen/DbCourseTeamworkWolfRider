@@ -49,11 +49,11 @@ namespace CupOfCoffee.MySQL.Models
 			:base(connection, backendConfiguration, metadataSource)
 		{ }
 
-        public IQueryable<Report> Reports
+        public IQueryable<ProductReport> Reports
         {
             get
             {
-                return this.GetAll<Report>();
+                return this.GetAll<ProductReport>();
             }
         }
 			

@@ -2,7 +2,7 @@
 {
     using System;
 
-    public interface IReport
+    public interface IProductReport
     {
         string ProductCategory { get; set; }
         int ProductID { get; set; }
