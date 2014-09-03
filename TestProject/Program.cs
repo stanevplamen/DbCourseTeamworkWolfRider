@@ -1,4 +1,5 @@
 ﻿using CupOfCoffee.Data;
+using CupOfCoffee.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace TestProject
         static void Main(string[] args)
         {
             DatabasePopulator.Seed();
+
+            CupOfCoffeeContext db = new CupOfCoffeeContext();
         }
     }
 }
