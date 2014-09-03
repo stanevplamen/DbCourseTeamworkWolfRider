@@ -1,5 +1,6 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
+    using CupOfCoffee.Controllers.XlmReportsParser;
     using CupOfCoffee.Controllers.MySqlReports;
     using CupOfCoffee.Data;
     using CupOfCoffee.MySQL.Models;
@@ -39,9 +40,7 @@
 
         private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
         {
-            this.Visibility = Visibility.Hidden;
-            var mainWindow = StartWindow.GetMainWindow(this);
-            mainWindow.ordersLoader.Visibility = Visibility.Visible;
+            
         }
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
@@ -73,7 +72,8 @@
 
         private void btnSoldProductDisplayer_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
+            var reports = XmlParser.GetDailyTurnoverByWaitressReports();
+            XmlParser.GenerateDailyTurnoverXmlReport(reports, "..\\..\\", "DailyReports.xml");
         }
 
         private void btnTotalProfitCalculator_Click(object sender, RoutedEventArgs e)

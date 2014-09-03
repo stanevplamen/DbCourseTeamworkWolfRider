@@ -63,6 +63,9 @@
     <Compile Include="ReportLoader\Archive.cs" />
     <Compile Include="ReportLoader\ExcelParser.cs" />
     <Compile Include="ReportLoader\ReportFinder.cs" />
+    <Compile Include="ReportsGenerator.cs" />
+    <Compile Include="XlmReportsParser\DailyWaitressReport.cs" />
+    <Compile Include="XlmReportsParser\XmlParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CupOfCoffee.Data\CupOfCoffee.Data.csproj">
