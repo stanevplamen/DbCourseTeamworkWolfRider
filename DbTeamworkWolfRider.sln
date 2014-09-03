@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Providers.Data", "Providers.Data\Providers.Data.csproj", "{1D3ACBDA-D12A-4992-AC12-9E256B2AD33D}"
 EndProject
@@ -26,6 +26,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.UI.WPF", "CupOfCoffee.UI.WPF\CupOfCoffee.UI.WPF.csproj", "{E410AC97-9DCC-4265-B742-D1A7165A8327}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.Controllers", "CupOfCoffee.Controllers\CupOfCoffee.Controllers.csproj", "{667F9FFF-8D13-458C-993D-9E5779E08CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{F788C1DD-0DD5-4A3D-B338-5774B1C51014}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F788C1DD-0DD5-4A3D-B338-5774B1C51014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F788C1DD-0DD5-4A3D-B338-5774B1C51014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F788C1DD-0DD5-4A3D-B338-5774B1C51014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F788C1DD-0DD5-4A3D-B338-5774B1C51014}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
