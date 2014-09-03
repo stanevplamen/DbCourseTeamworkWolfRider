@@ -2,6 +2,8 @@
 {
     public class EmployeeSalary : IEmployeeSalary
     {
+        public int EmployeeID { get; set; }
+
         public string Name { get; set; }
 
         public decimal BaseSalary { get; set; }

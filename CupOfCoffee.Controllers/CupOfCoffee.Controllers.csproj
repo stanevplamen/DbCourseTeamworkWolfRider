@@ -44,6 +44,7 @@
     <Reference Include="itextsharp, Version=5.4.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>libs\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="MongoDB.Bson, Version=1.9.2.235, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\mongocsharpdriver.1.9.2\lib\net35\MongoDB.Bson.dll</HintPath>
@@ -81,6 +82,7 @@
     <Compile Include="SalaryReports\PdfFile.cs" />
     <Compile Include="SalaryReports\SalaryCalculator.cs" />
     <Compile Include="ReportsGenerator.cs" />
+    <Compile Include="SalaryReports\SalaryRecorder.cs" />
     <Compile Include="XlmReportsParser\DailyWaitressReport.cs" />
     <Compile Include="XlmReportsParser\XmlParser.cs" />
   </ItemGroup>

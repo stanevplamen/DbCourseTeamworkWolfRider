@@ -18,38 +18,36 @@
             var currentDate = DateTime.Now;
             var lastMonthDate = currentDate.AddMonths(-1);
 
-            using (context)
+            var results = context.Employees.Select(e => new EmployeeSalary()
             {
-                var results = context.Employees.Select(e => new EmployeeSalary()
-                {
-                    Name = e.Name,
-                    BaseSalary = e.Position.BaseSalary,
-                    ExperienceBonus = (e.HireDate.Year - DateTime.Now.Year) * 20,
-                    FeedbackBonus = e.CustomerFeedbacks.Where(cf => cf.Order.OrderDate > lastMonthDate).Average(cf => (decimal)cf.Evaluation) * 20,
-                    TurnoverBonus = e.Orders.Where(
-                            o => o.OrderDate > lastMonthDate
-                        )
-                            .Sum(
-                                o => o.OrderDetails.Sum(
-                                    od => od.Quantity * (
-                                        od.Product.SellPrice - (
-                                        od.HappyHour ? 0 : od.Product.SellPrice * 0.25m
-                                        ) - (
-                                        od.Product.SellPrice * (
-                                        od.Order.Customer.CustomerStatus.Discount / 100
-                                        )
-                                        )
+                EmployeeID = e.Id,
+                Name = e.Name,
+                BaseSalary = e.Position.BaseSalary,
+                ExperienceBonus = (e.HireDate.Year - DateTime.Now.Year) * 20,
+                FeedbackBonus = e.CustomerFeedbacks.Where(cf => cf.Order.OrderDate > lastMonthDate).Average(cf => (decimal)cf.Evaluation) * 20,
+                TurnoverBonus = e.Orders.Where(
+                        o => o.OrderDate > lastMonthDate
+                    )
+                        .Sum(
+                            o => o.OrderDetails.Sum(
+                                od => od.Quantity * (
+                                    od.Product.SellPrice - (
+                                    od.HappyHour ? 0 : od.Product.SellPrice * 0.25m
+                                    ) - (
+                                    od.Product.SellPrice * (
+                                    od.Order.Customer.CustomerStatus.Discount / 100
+                                    )
                                     )
                                 )
-                            ) * 0.1m
-                });
+                            )
+                        ) * 0.1m
+            });
 
-                salaries = results.ToList();
+            salaries = results.ToList();
 
-                foreach (var salary in salaries)
-                {
-                    salary.TotalSalary = salary.BaseSalary + salary.ExperienceBonus + salary.FeedbackBonus + salary.TurnoverBonus;
-                }
+            foreach (var salary in salaries)
+            {
+                salary.TotalSalary = salary.BaseSalary + salary.ExperienceBonus + salary.FeedbackBonus + salary.TurnoverBonus;
             }
 
             return salaries;

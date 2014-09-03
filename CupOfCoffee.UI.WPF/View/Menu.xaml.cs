@@ -41,7 +41,9 @@
 
         private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
         {
-            
+            this.Visibility = Visibility.Hidden;
+            var mainWindow = StartWindow.GetMainWindow(this);
+            mainWindow.ordersLoader.Visibility = Visibility.Visible;
         }
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
@@ -51,17 +53,21 @@
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
         {
-            var pdfFile = new PdfFile();
-            pdfFile.filename = "..\\..\\..\\PDFReport\\employee-sallaries.pdf";
-            pdfFile.title = "Report: Employees sallaries";
-            pdfFile.data = SalaryCalculator.Calculate(new CupOfCoffeeContext());
+            using (var context = new CupOfCoffeeContext())
+            {
+                var pdfFile = new PdfFile();
+                pdfFile.filename = "..\\..\\..\\PDFReport\\employee-sallaries.pdf";
+                pdfFile.title = "Report: Employees sallaries";
+                pdfFile.data = SalaryCalculator.Calculate(context);
 
-            PdfCreator.Page_Load(pdfFile);
+                PdfCreator.Create(pdfFile);
 
-            // TODO: Total amount save it to montly salaries
-            var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
-            var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pdfFile.filename);
-            Process.Start(adobeInfo);
+                SalaryRecorder.Insert(pdfFile.data, context);
+
+                var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
+                var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pdfFile.filename);
+                Process.Start(adobeInfo);
+            }
         }
 
         private void btnProductIncomeCalculator_Click(object sender, RoutedEventArgs e)

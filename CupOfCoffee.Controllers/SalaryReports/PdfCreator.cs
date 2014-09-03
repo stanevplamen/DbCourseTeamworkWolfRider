@@ -9,7 +9,7 @@
 
     public static class PdfCreator
     {
-        public static void Page_Load(PdfFile content)
+        public static void Create(PdfFile content)
         {
             Document document = new Document();
 
@@ -33,7 +33,6 @@
                 builder.Append("</tr>");
                 builder.Append(string.Format("<tr><td colspan=\"4\">Total Salary: {0:0.00}$</td></tr></table><br>", employee.TotalSalary));
             }
-
 
             string htmlText = builder.ToString();
 
