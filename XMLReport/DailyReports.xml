@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<daily-reports>
+  <report date="2.9.2014 г.">
+    <waitress name="Penka Peshova" turnover="133.9000" />
+    <waitress name="Stanka Tankov" turnover="137.9000" />
+  </report>
+  <report date="3.9.2014 г.">
+    <waitress name="Penka Peshova" turnover="133.6000" />
+    <waitress name="Stanka Tankov" turnover="133.9000" />
+  </report>
+</daily-reports>

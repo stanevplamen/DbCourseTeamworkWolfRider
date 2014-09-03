@@ -84,8 +84,10 @@
 
         private void btnSoldProductDisplayer_Click(object sender, RoutedEventArgs e)
         {
+            var path = "..\\..\\..\\XMLReport\\";
             var reports = XmlParser.GetDailyTurnoverByWaitressReports();
-            XmlParser.GenerateDailyTurnoverXmlReport(reports, "..\\..\\", "DailyReports.xml");
+            XmlParser.GenerateDailyTurnoverXmlReport(reports, path, "DailyReports.xml");
+            Process.Start(path);
         }
 
         private void btnTotalProfitCalculator_Click(object sender, RoutedEventArgs e)
