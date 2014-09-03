@@ -57,10 +57,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FluentModel.cs" />
-    <Compile Include="IReport.cs" />
+    <Compile Include="IProductReport.cs" />
     <Compile Include="MySqlModelMetadataSource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Report.cs" />
+    <Compile Include="ProductReport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

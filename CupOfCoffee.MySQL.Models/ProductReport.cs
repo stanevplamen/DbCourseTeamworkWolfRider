@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CupOfCoffee.MySQL.Models
 {
-    public class Report : IReport
+    public class ProductReport : IProductReport
     {
         public int ReportID { get; set; }
         public int ProductID { get; set; }
