@@ -6,12 +6,14 @@ namespace CupOfCoffee.Data
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
     using CupOfCoffee.Models;
+    using CupOfCoffee.Data.Migrations;
 
     public partial class CupOfCoffeeContext : DbContext
     {
         public CupOfCoffeeContext()
             : base("name=CupOfCoffeeDb")
         {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<CupOfCoffeeContext, Configuration>());
         }
 
         public virtual IDbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
