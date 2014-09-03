@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>OpenAccess.Core</id>
+    <version>2014.2.617.2</version>
+    <title>OpenAccess.Core</title>
+    <authors>Telerik AD</authors>
+    <owners>Telerik AD</owners>
+    <licenseUrl>http://www.telerik.com/purchase/license-agreement/data-access</licenseUrl>
+    <projectUrl>http://www.telerik.com/data-access</projectUrl>
+    <iconUrl>http://www.telerik.com/images/NuGet_Telerik_OpenAccess_ORM.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This NuGet Package is deprecated since the product has been renamed to Telerik Data Access. Please use Telerik.DataAccess.Core instead.</description>
+    <summary>This NuGet Package is deprecated since the product has been renamed to Telerik Data Access. Please use Telerik.DataAccess.Core instead.</summary>
+    <releaseNotes>New
+- Support of ICollection&lt;T&gt;.Contains(T) and Enumerable.Contains&lt;T&gt;(IEnumerable&lt;T&gt;,T) in LINQ projection - ICollection&lt;T&gt;.Contains(T) and Enumerable.Contains&lt;T&gt;(IEnumerable&lt;T&gt;,T) are now supported in the LINQ projection expressions, so that they become usable in group aggregate expressions.
+
+Changed
+- The old OpenAccess ORM packages are deprecated and are not updated any more - The old OpenAccess.* NuGet packages not be uploaded any more. All projects using them should be migrated to their corresponding Telerik.DataAccess.* packages:
+OpenAccess.Core -&gt; Telerik.DataAccess.Core
+OpenAccess.CodeFirst - &gt; Telerik.DataAccess.Fluent
+OpenAccess.CodeFirst.Sample -&gt; Telerik.DataAccess.Fluent.Sample
+With this last release of the old OpenAccess.* packages, they are made dependent on the latest Telerik.DataAccess.* packages without specifying a version.
+
+Fixed
+- NullReferenceException when second level cache cluster is used in a setup with clients using different meta data and an object with internal identity is evicted - Now the distributed L2 cache is functioning properly when participating servers have similar, but not identical metadata.
+- Attempting to read unsigned value stored in some backends resulting in a System.OverflowException - Reading unsigned numeric columns (like ushort) will no longer cause System.OverflowException when loading data from a database supporting unsigned types.
+- When calling GetMemberNames() on entity type with internal version column, voa_version member unexpectedly returned - GetMemberNames() method in the OpenAccessContext is no longer returning internal version column (voa_version) for types using ConcurrencyControl.Version.
+- OpenAccessContext.GetMemberNames() not returning members defined in base types - OpenAccessContext GetMemberNames() API now returns members defined in base type(s) of the current type.
+- Schema Migration: Exception caused by index creation for VARCHAR(MAX) columns - Telerik Data Access will no longer try to automatically create database indexes over data types that cannot be indexed (e.g. varchar(MAX), nvarchar(MAX), blob and etc.) when creating or migrating database schema.
+
+
+NOTE: These Release Notes include only the runtime changes in the particular Telerik Data Access release. For the full list of changes please refer to the Telerik web site ( http://www.telerik.com/support/whats-new/data-access/release-history ).</releaseNotes>
+    <copyright>Copyright (C) 1996-2014 Telerik AD</copyright>
+    <language>en-US</language>
+    <tags>ORM Fluent CodeOnly Entity Mapping DataAccess Database DAL</tags>
+    <dependencies>
+      <dependency id="Telerik.DataAccess.Core" />
+    </dependencies>
+  </metadata>
+</package>
