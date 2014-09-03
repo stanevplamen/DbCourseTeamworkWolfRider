@@ -17,9 +17,9 @@
                 new ProductReport(){ ProductID = 4, ProductName="Jack", ProductCategory="Whiskey", TotalIncome= 5000, TotalQuantitySold=1000 }
             };
 
-            UpdateDatabase();
-            MySqlModel context = new MySqlModel();
-            AddReports(reps, context);
+            //UpdateDatabase();
+            //MySqlModel context = new MySqlModel();
+            //AddReports(reps, context);
         }
 
         public static void AddReports(ICollection<IProductReport> reports, MySqlModel context)
