@@ -30,6 +30,40 @@ namespace CupOfCoffee.Controllers.XlmReportsParser
             return results.ToList();            
         }
 
+        public static List<CustomerFeedback> GenerateFeedbacksFromXml(string path)
+        {
+            CupOfCoffeeContext context = new CupOfCoffeeContext();
+
+            XmlDocument document = new XmlDocument();
+            document.Load(path);
+            XmlNode root = document.DocumentElement;
+
+            List<CustomerFeedback> feedbacks = new List<CustomerFeedback>();
+
+            foreach (XmlNode order in root.ChildNodes)
+            {
+                int orderId = int.Parse(order.Attributes["id"].Value);
+                int employeeId = context.Orders.Where(o => o.Id == orderId).Select(e=>e.EmployeeId).FirstOrDefault();
+                foreach (XmlNode feedback in order.ChildNodes)
+                {
+                    int evaluationValue = int.Parse(feedback.Attributes["evaluation"].Value);
+                    CustomerEvaluation evaluation = (CustomerEvaluation)evaluationValue;
+                    CustomerFeedback fb = new CustomerFeedback()
+                    {
+                        CustomerId = int.Parse(feedback.Attributes["customerId"].Value),
+                        EmployeeId = employeeId,
+                        OrderId = orderId,
+                        Content = feedback.InnerText,
+                        Evaluation = evaluation
+                    };
+
+                    feedbacks.Add(fb);
+                }
+            }
+
+            return feedbacks;
+        }
+
         public static void GenerateDailyTurnoverXmlReport(List<DailyWaitressReport> dailyReports, string path, string fileName)
         {
             string totalPath = path + fileName;

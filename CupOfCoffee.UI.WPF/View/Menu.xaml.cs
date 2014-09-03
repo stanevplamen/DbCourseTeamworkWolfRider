@@ -9,6 +9,7 @@
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
+    using Newtonsoft.Json;
 
     /// <summary>
     /// Interaction logic for Menu.xaml
@@ -48,7 +49,19 @@
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
+            string pathToFile = string.Empty;
+            CupOfCoffeeContext context = new CupOfCoffeeContext();
+            var feedbacks = XmlParser.GenerateFeedbacksFromXml(pathToFile);
+            foreach (var feedback in feedbacks)
+            {
+                context.CustomerFeedbacks.Add(feedback);
+            }
+            context.SaveChanges();
+
+            foreach (var feedback in feedbacks)
+            {
+                string feedbackAsJson = JsonConvert.SerializeObject(feedback);
+            }
         }
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
