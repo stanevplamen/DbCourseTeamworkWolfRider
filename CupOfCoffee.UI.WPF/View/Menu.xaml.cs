@@ -1,9 +1,12 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
+    using CupOfCoffee.Controllers.MySqlReports;
+    using CupOfCoffee.Data;
+    using CupOfCoffee.MySQL.Models;
     using System;
-using System.Diagnostics;
-using System.Windows;
-using System.Windows.Controls;
+    using System.Diagnostics;
+    using System.Windows;
+    using System.Windows.Controls;
 
     /// <summary>
     /// Interaction logic for Menu.xaml
@@ -58,7 +61,14 @@ using System.Windows.Controls;
 
         private void btnProductIncomeCalculator_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
+            string path = "";
+            CupOfCoffeeContext context = new CupOfCoffeeContext();
+            var reports = ProductsReportsLoader.GetProductsSaleInfo(context);
+            ProductsReportsLoader.GenerateJsonReports(reports, path);
+
+            MySqlModel mySqlCOntext = new MySqlModel();
+            ProductsReportsLoader.AddReports(reports, mySqlCOntext);
+            Process.Start(path);
         }
 
         private void btnSoldProductDisplayer_Click(object sender, RoutedEventArgs e)

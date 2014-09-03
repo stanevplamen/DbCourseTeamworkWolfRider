@@ -14,9 +14,9 @@
             var reportDetail = _orderSheet + "$";
 
             var connectionBuilder = new OleDbConnectionStringBuilder();
-            connectionBuilder.Provider = "Microsoft.ACE.OLEDB.12.0";
+            connectionBuilder.Provider = "Microsoft.Jet.OLEDB.4.0";
             connectionBuilder.DataSource = _filePath;
-            connectionBuilder.Add("Extended Properties", "Excel 12.0;HDR=Yes;IMEX=2");
+            connectionBuilder.Add("Extended Properties", "Excel 8.0;HDR=Yes");
             var connectionExcel = new OleDbConnection(connectionBuilder.ConnectionString);
 
             try

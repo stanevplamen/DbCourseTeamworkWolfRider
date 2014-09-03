@@ -52,6 +52,8 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Telerik.OpenAccess, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.OpenAccess.35.Extensions, Version=2014.2.711.1, Culture=neutral, PublicKeyToken=7ce17eeaf1d59342, processorArchitecture=MSIL" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -136,6 +138,10 @@
     <ProjectReference Include="..\CupOfCoffee.Models\CupOfCoffee.Models.csproj">
       <Project>{aceaf5e1-8e75-4a63-aad5-72bef15c42a3}</Project>
       <Name>CupOfCoffee.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CupOfCoffee.MySQL.Models\CupOfCoffee.MySQL.Models.csproj">
+      <Project>{6f9c2621-695c-4bde-881b-157dcaa75c07}</Project>
+      <Name>CupOfCoffee.MySQL.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
