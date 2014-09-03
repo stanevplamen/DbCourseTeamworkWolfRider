@@ -8,10 +8,12 @@
 
         decimal BaseSalary { get; set; }
 
-        decimal ExperienceBonus { get; set; }
+        decimal? ExperienceBonus { get; set; }
 
-        decimal FeedbackBonus { get; set; }
+        decimal? FeedbackBonus { get; set; }
 
-        decimal TurnoverBonus { get; set; }
+        decimal? TurnoverBonus { get; set; }
+
+        decimal TotalSalary { get; set; }
     }
 }

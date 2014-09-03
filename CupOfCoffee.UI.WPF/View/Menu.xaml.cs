@@ -1,15 +1,16 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
-    using CupOfCoffee.Controllers.XlmReportsParser;
-    using CupOfCoffee.Controllers.MySqlReports;
-    using CupOfCoffee.Controllers.SalaryReports;
-    using CupOfCoffee.Data;
-    using CupOfCoffee.MySQL.Models;
     using System;
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
-    using Newtonsoft.Json;
+
+    using CupOfCoffee.Controllers.DataLoader;
+    using CupOfCoffee.Controllers.MySqlReports;
+    using CupOfCoffee.Controllers.SalaryReports;
+    using CupOfCoffee.Controllers.XlmReportsParser;
+    using CupOfCoffee.Data;
+    using CupOfCoffee.MySQL.Models;
 
     /// <summary>
     /// Interaction logic for Menu.xaml
@@ -19,25 +20,26 @@
         public Menu()
         {
             InitializeComponent();
+            DatabasePopulator.Seed();
         }
 
         private void btnDataLoader_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
-            if (true)
-            {
+            //try
+            //{
+                MongoDbExtractor.ExtractDataToSqlServer();
                 MessageBox.Show("The orders were loaded successfully!",
-                    "Loaded successfully",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
-            }
-            else
-            {
-                MessageBox.Show("Cannot load orders!",
-                   "Loaded failed",
+                   "Loaded successfully",
                    MessageBoxButton.OK,
-                   MessageBoxImage.Error);
-            }
+                   MessageBoxImage.Information);
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Cannot load orders!",
+            //      "Loaded failed",
+            //      MessageBoxButton.OK,
+            //      MessageBoxImage.Error);
+            //}
         }
 
         private void btnOrderLoader_Click(object sender, RoutedEventArgs e)

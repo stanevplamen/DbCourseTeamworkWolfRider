@@ -21,8 +21,8 @@ namespace CupOfCoffee.Controllers.MySqlReports
                 ProductID = p.Id,
                 ProductName = p.Name,
                 ProductCategory = p.Category.Name,
-                TotalIncome = p.OrderDetails.Sum(od => od.Quantity * (p.SellPrice - (od.HappyHour ? 0 : p.SellPrice * 0.25m) - (p.SellPrice * (od.Order.Customer.CustomerStatus.Discount / 100)))),
-                TotalQuantitySold = p.OrderDetails.Sum(g => g.Quantity)
+                TotalIncome = (Nullable<decimal>)p.OrderDetails.Sum(od => od.Quantity * (p.SellPrice - (od.HappyHour ? 0 : p.SellPrice * 0.25m) - (p.SellPrice * (od.Order.Customer.CustomerStatus.Discount / 100)))) ?? 0,
+                TotalQuantitySold = (Nullable<int>)p.OrderDetails.Sum(g => g.Quantity) ?? 0
             }).ToList();
 
             return results;

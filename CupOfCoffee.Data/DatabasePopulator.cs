@@ -11,7 +11,7 @@ namespace CupOfCoffee.Data
 {
     public static class DatabasePopulator
     {
-        public static MongoDatabase db;
+        private static MongoDatabase db;
 
         static DatabasePopulator()
         {

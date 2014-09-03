@@ -1,8 +1,8 @@
 {
   "ReportID": 0,
   "ProductID": 2,
-  "ProductName": "Espresso",
+  "ProductName": "Macchiato",
   "ProductCategory": "Coffee",
-  "TotalIncome": 101.775000,
-  "TotalQuantitySold": 59
+  "TotalIncome": 4.198600,
+  "TotalQuantitySold": 4
 }
