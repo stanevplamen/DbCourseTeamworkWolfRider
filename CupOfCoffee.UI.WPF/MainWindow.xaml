@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:View="clr-namespace:CupOfCoffee.UI.WPF.View"
         ResizeMode="CanMinimize"    
-        Title="Cup Of Coffee" Height="539" Width="816">
+        Title="Cup Of Coffee" Height="539" Width="816" Icon="Images/logo.png">
     <Canvas x:Name="mainContainer">
         <Canvas.Background>
             <ImageBrush ImageSource="Images/cup-of-coffee-menu.jpg"/>

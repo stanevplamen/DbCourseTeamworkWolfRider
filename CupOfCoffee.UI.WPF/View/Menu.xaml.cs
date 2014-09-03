@@ -1,6 +1,7 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
     using CupOfCoffee.Controllers.MySqlReports;
+    using CupOfCoffee.Controllers.SalaryReports;
     using CupOfCoffee.Data;
     using CupOfCoffee.MySQL.Models;
     using System;
@@ -51,11 +52,16 @@
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
-            // Sample test to run Adobe Reader. Change the path after implementing logic
-            var pathToPdf = @"..\..\..\Sample-Aggregated-Sales-Report.pdf";
+            var pdfFile = new PdfFile();
+            pdfFile.filename = "..\\..\\..\\PDFReport\\employee-sallaries.pdf";
+            pdfFile.title = "Report: Employees sallaries";
+            pdfFile.data = SalaryCalculator.Calculate(new CupOfCoffeeContext());
+
+            PdfCreator.Page_Load(pdfFile);
+
+            // TODO: Total amount save it to montly salaries
             var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
-            var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pathToPdf);
+            var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pdfFile.filename);
             Process.Start(adobeInfo);
         }
 
