@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>OpenAccess.Glimpse</id>
+    <version>1.0.0.0</version>
+    <title>OpenAccess.Glimpse</title>
+    <authors>Damyan Bogoev</authors>
+    <owners>Damyan Bogoev</owners>
+    <projectUrl>https://github.com/damyanbogoev/openaccess-orm-glimpse</projectUrl>
+    <iconUrl>http://www.telerik.com/images/NuGet_Telerik_OpenAccess_ORM.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>The OpenAccess.Glimpse NuGet package provides OpenAccess ORM profiling.</description>
+    <summary>OpenAccess ORM profiler for Glimpse.</summary>
+    <language>en-US</language>
+    <tags>ORM Entity Mapping DataAccess Database DAL Glimpse Sitefinity ASP.NET SQL performance profiling timing diagnostics</tags>
+    <dependencies>
+      <dependency id="AutoMapper" version="3.0.0" />
+      <dependency id="Glimpse" version="1.6.1" />
+    </dependencies>
+  </metadata>
+</package>
