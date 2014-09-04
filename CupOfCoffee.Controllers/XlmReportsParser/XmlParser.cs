@@ -8,7 +8,6 @@ using CupOfCoffee.Data;
 using Newtonsoft.Json;
 using System.Data.Entity;
 using System.Xml;
-using System.Text;
 
 namespace CupOfCoffee.Controllers.XlmReportsParser
 {

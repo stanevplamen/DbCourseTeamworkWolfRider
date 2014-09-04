@@ -31,13 +31,13 @@
                     MessageBoxButton.OK,
                     MessageBoxImage.Information);
             }
-            else
-            {
-                MessageBox.Show("Cannot load orders!",
-                   "Loaded failed",
-                   MessageBoxButton.OK,
-                   MessageBoxImage.Error);
-            }
+            //else
+            //{
+            //    MessageBox.Show("Cannot load orders!",
+            //       "Loaded failed",
+            //       MessageBoxButton.OK,
+            //       MessageBoxImage.Error);
+            //}
         }
 
         private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
@@ -49,7 +49,7 @@
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
         {
-            string pathToFile = string.Empty;
+            string pathToFile = "..\\..\\..\\XMLReports\\Feedbacks.xml";
             CupOfCoffeeContext context = new CupOfCoffeeContext();
             var feedbacks = XmlParser.GenerateFeedbacksFromXml(pathToFile);
             foreach (var feedback in feedbacks)
@@ -57,11 +57,6 @@
                 context.CustomerFeedbacks.Add(feedback);
             }
             context.SaveChanges();
-
-            foreach (var feedback in feedbacks)
-            {
-                string feedbackAsJson = JsonConvert.SerializeObject(feedback);
-            }
         }
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)

@@ -13,7 +13,7 @@
                 string[] currentDirFiles = Directory.GetFiles(currentPath, fileExtension);
                 files.AddRange(currentDirFiles);
             }
-            catch (UnauthorizedAccessException e)
+            catch (UnauthorizedAccessException)
             {
                 return;
             }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders>
+	<order id="1">
+	  <feedback customerId="1" evaluation="1"></feedback>
+	  <feedback customerId="4" evaluation="2">The view to the street that was full of trucks and cars was great</feedback>
+	  <feedback customerId="6" evaluation="1"></feedback>
+	</order>
+	<order id="2">
+	  <feedback customerId="2" evaluation="-1">My coffee was cold</feedback>
+	  <feedback customerId="3" evaluation="0">My beer was not cold</feedback>
+	</order>
+	<order id="3">
+	  <feedback customerId="8" evaluation="1"></feedback>
+	  <feedback customerId="9" evaluation="2">The waitress has beautiful orange eyes</feedback>
+	  <feedback customerId="12" evaluation="1">Good service</feedback>
+	</order>
+	<order id="4">
+	  <feedback customerId="2" evaluation="-2">I'm hater</feedback>
+	</order>
+	<order id="5">
+	  <feedback customerId="9" evaluation="1">I had great time listening to Dj Jivko Mix</feedback>
+	  <feedback customerId="7" evaluation="-1">The music was shit</feedback>
+	  <feedback customerId="1" evaluation="1"></feedback>
+	</order>
+	<order id="6">
+	  <feedback customerId="11" evaluation="-1">The orange juice was green</feedback>
+	  <feedback customerId="6" evaluation="2">The coffee was amazing</feedback>
+	  <feedback customerId="14" evaluation="1">I loved the napkins</feedback>
+	</order>
+	<order id="7">
+	  <feedback customerId="12" evaluation="0">Two parts. First half - very good. Second half - I'm no like</feedback>
+	  <feedback customerId="3" evaluation="1">The beer was great at 9AM</feedback>
+	</order>
+	<order id="8">
+	  <feedback customerId="7" evaluation="1">I love the waitress</feedback>
+	</order>
+	<order id="9">
+	  <feedback customerId="7" evaluation="0"></feedback>
+	  <feedback customerId="1" evaluation="1"></feedback>
+	</order>
+	<order id="10">
+	  <feedback customerId="4" evaluation="2">I smoked a box of cigarettes in 1 hour. I feel great</feedback>
+	  <feedback customerId="5" evaluation="1">My friend feels great</feedback>
+	</order>
+	<order id="11">
+	  <feedback customerId="1" evaluation="-1">My chair had three legs</feedback>
+	</order>
+	<order id="12">
+	  <feedback customerId="1" evaluation="2">Today my chair had four legs</feedback>
+	  <feedback customerId="7" evaluation="0">Writing feedbacks feels great. May I write 15024 more?</feedback>
+	</order>
+	<order id="13">
+	  <feedback customerId="12" evaluation="-1"></feedback>
+	</order>
+	<order id="14">
+	  <feedback customerId="5" evaluation="0">I wanted a unicorn sandwich but they refused me.</feedback>
+	  <feedback customerId="9" evaluation="1">Cheers</feedback>
+	  <feedback customerId="11" evaluation="-1">The waitress was ugly</feedback>
+	</order>
+	<order id="15">
+	  <feedback customerId="4" evaluation="0">Average service</feedback>
+	  <feedback customerId="1" evaluation="1">The table had very beautiful sharp edges. I almost cut my legs and arms</feedback>
+	</order>
+</orders>

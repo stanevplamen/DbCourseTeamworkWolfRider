@@ -134,7 +134,6 @@ namespace Providers.Controllers
                         break;
                     default:
                         throw new NotImplementedException("The given coffee do not exists");
-                        break;
                 }
 
             }
