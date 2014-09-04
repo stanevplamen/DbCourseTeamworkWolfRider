@@ -58,8 +58,10 @@
                         foreach (var feedback in feedbacks)
                         {
                             string feedbackAsJson = JsonConvert.SerializeObject(feedback);
-                            // TODO: Add it to MongoDB
                         }
+
+                        DatabasePopulator.ImportFeedback(feedbacks);
+
                     }
                     catch (Exception)
                     {

@@ -17,34 +17,38 @@
             MongoServer server = client.GetServer();
             db = server.GetDatabase("CupOfCoffee");
         }
-
+        public static void ImportFeedback(ICollection<CustomerFeedback> feedbacks)
+        {
+            var feedbackCollection = db.GetCollection("Feedbacks");
+            feedbackCollection.InsertBatch<CustomerFeedback>(feedbacks);
+        }
 
         public static void Seed() 
         {
             db.Drop();
 
             List<Category> categories = GenerateCategories();
-            MongoCollection categoryCollection = db.GetCollection("Categories");
+            var categoryCollection = db.GetCollection("Categories");
             categoryCollection.InsertBatch<Category>(categories);
 
             List<Product> products = GenerateProducts();
-            MongoCollection productCollection = db.GetCollection("Products");
+            var productCollection = db.GetCollection("Products");
             productCollection.InsertBatch<Product>(products);
 
             List<CustomerStatus> customerStatuses = GenerateCustomerStatuses();
-            MongoCollection customerStatusCollection = db.GetCollection("CustomerStatuses");
+            var customerStatusCollection = db.GetCollection("CustomerStatuses");
             customerStatusCollection.InsertBatch<CustomerStatus>(customerStatuses);
 
             List<Customer> customers = GenerateCustomers();
-            MongoCollection customerCollection = db.GetCollection("Customers");
+            var customerCollection = db.GetCollection("Customers");
             customerCollection.InsertBatch<Customer>(customers);
 
             List<Position> positions = GeneratePositions();
-            MongoCollection positionCollection = db.GetCollection("Positions");
+            var positionCollection = db.GetCollection("Positions");
             positionCollection.InsertBatch<Position>(positions);
 
             List<Employee> employees = GenerateEmployees();
-            MongoCollection employeeCollection = db.GetCollection("Employees");
+            var employeeCollection = db.GetCollection("Employees");
             employeeCollection.InsertBatch<Employee>(employees);
         }
 
