@@ -4,6 +4,7 @@
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
+    using System.Linq;
 
     using CupOfCoffee.Controllers.DataLoader;
     using CupOfCoffee.Controllers.FinalReport;
@@ -12,6 +13,8 @@
     using CupOfCoffee.Controllers.XlmReportsParser;
     using CupOfCoffee.Data;
     using CupOfCoffee.MySQL.Models;
+    using System.Data.Entity;
+    using CupOfCoffee.SQLite.Data.Migrations;
 
     /// <summary>
     /// Interaction logic for Menu.xaml
@@ -127,7 +130,6 @@
                 var path = "..\\..\\..\\XMLReport\\";
                 var reports = XmlParser.GetDailyTurnoverByWaitressReports();
                 XmlParser.GenerateDailyTurnoverXmlReport(reports, path, "DailyReports.xml");
-                Process.Start(path);
 
                 MessageBox.Show("The daily reports were successfully generated!",
                      "Generated successfully",
@@ -149,7 +151,7 @@
         {
             try
             {
-                var path = "..\\..\\..\\FinalReport\\total-profit.xlsx";
+                var path = "total-profit.xlsx";
                 var mySqlCOntext = new MySqlModel();
                 var products = ProductsReportsLoader.GetReportsFromMySql(mySqlCOntext);
 

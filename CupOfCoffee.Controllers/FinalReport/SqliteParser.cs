@@ -2,42 +2,34 @@
 {
     using System.Collections.Generic;
     using System.Data.SQLite;
+    using System.Linq;
 
-    using CupOfCoffee.SQLite.Data.Database;
+    using CupOfCoffee.SQLite.Data;
+    using CupOfCoffee.SQLite.Data.DatabaseSqlite;
 
     public static class SqliteParser
     {
         public static Dictionary<string, VendorsProduct> GetVendorsProducts()
         {
-            var sqliteConnection = new SQLiteConnection("Data Source=..\\..\\..\\CupOfCoffee.SQLite.Data\\Database\\products.sqlite");
-            var vendorsProducts = new Dictionary<string, VendorsProduct>();
+            var sqliteContext = new ProductsContext();
 
-            using (sqliteConnection)
+            if (sqliteContext.VendorsProducts.Count() == 0)
             {
-                sqliteConnection.Open();
+                ProductsPopulator.Populate(sqliteContext);
+            }
+            
+            var vendorsProducts = new Dictionary<string, VendorsProduct>();
+            var vendorsProductsAsList = new List<VendorsProduct>();
 
-                var query = "SELECT * FROM VendorProducts";
+            using(sqliteContext)
+            {
+                vendorsProductsAsList = sqliteContext.VendorsProducts.ToList();
+            }
 
-                var cmd = new SQLiteCommand(query, sqliteConnection);
 
-                var dataReader = cmd.ExecuteReader();
-
-                using (dataReader)
-                {
-                    while (dataReader.Read())
-                    {
-                        var id = dataReader.GetInt32(0);
-                        var name = dataReader.GetString(1);
-                        var basePrice = dataReader.GetInt32(2) / 100.0m;
-
-                        vendorsProducts.Add(name, new VendorsProduct()
-                        {
-                            Id = id,
-                            Name = name,
-                            BasePrice = basePrice
-                        });
-                    }
-                }
+            foreach (var product in vendorsProductsAsList)
+            {
+                vendorsProducts.Add(product.Name, product);
             }
 
             return vendorsProducts;

@@ -1,6 +1,7 @@
 ﻿namespace CupOfCoffee.SQLite.Data
 {
-    using CupOfCoffee.SQLite.Data.Database;
+    using CupOfCoffee.SQLite.Data.DatabaseSqlite;
+    using CupOfCoffee.SQLite.Data.Migrations;
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
@@ -12,9 +13,12 @@
     public class ProductsContext : DbContext
     {
 
-        public ProductsContext() 
+        public ProductsContext()
+            : base("sqlite_uri")
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<ProductsContext>());
         }
+
         public IDbSet<VendorsProduct> VendorsProducts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

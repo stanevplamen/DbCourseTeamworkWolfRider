@@ -82,7 +82,6 @@
                 new Product { Id = productId++, CategoryId = 2, Name = "Herbal Tea", SellPrice = 0.8m},
                 new Product { Id = productId++, CategoryId = 2, Name = "Fruit Tea", SellPrice = 0.9m},
                 new Product { Id = productId++, CategoryId = 2, Name = "Masala Chai", SellPrice = 1.5m},
-                new Product { Id = productId++, CategoryId = 2, Name = "Masala Chai", SellPrice = 1m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Zagorka", SellPrice = 2m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Shumensko", SellPrice = 1.8m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Ariana Radler", SellPrice = 1.6m},
