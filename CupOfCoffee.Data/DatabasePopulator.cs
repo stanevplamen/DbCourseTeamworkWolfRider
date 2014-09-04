@@ -1,17 +1,13 @@
-﻿using CupOfCoffee.Models;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CupOfCoffee.Data
+﻿namespace CupOfCoffee.Data
 {
+    using CupOfCoffee.Models;
+    using MongoDB.Driver;
+    using System;
+    using System.Collections.Generic;
+
     public static class DatabasePopulator
     {
-        public static MongoDatabase db;
+        private static MongoDatabase db;
 
         static DatabasePopulator()
         {
@@ -21,34 +17,38 @@ namespace CupOfCoffee.Data
             MongoServer server = client.GetServer();
             db = server.GetDatabase("CupOfCoffee");
         }
+        public static void ImportFeedback(ICollection<CustomerFeedback> feedbacks)
+        {
+            var feedbackCollection = db.GetCollection("Feedbacks");
+            feedbackCollection.InsertBatch<CustomerFeedback>(feedbacks);
+        }
 
-
-        public static void Seed() 
+        public static void Seed()
         {
             db.Drop();
 
             List<Category> categories = GenerateCategories();
-            MongoCollection categoryCollection = db.GetCollection("Categories");
+            var categoryCollection = db.GetCollection("Categories");
             categoryCollection.InsertBatch<Category>(categories);
 
             List<Product> products = GenerateProducts();
-            MongoCollection productCollection = db.GetCollection("Products");
+            var productCollection = db.GetCollection("Products");
             productCollection.InsertBatch<Product>(products);
 
             List<CustomerStatus> customerStatuses = GenerateCustomerStatuses();
-            MongoCollection customerStatusCollection = db.GetCollection("CustomerStatuses");
+            var customerStatusCollection = db.GetCollection("CustomerStatuses");
             customerStatusCollection.InsertBatch<CustomerStatus>(customerStatuses);
 
             List<Customer> customers = GenerateCustomers();
-            MongoCollection customerCollection = db.GetCollection("Customers");
+            var customerCollection = db.GetCollection("Customers");
             customerCollection.InsertBatch<Customer>(customers);
 
             List<Position> positions = GeneratePositions();
-            MongoCollection positionCollection = db.GetCollection("Positions");
+            var positionCollection = db.GetCollection("Positions");
             positionCollection.InsertBatch<Position>(positions);
 
             List<Employee> employees = GenerateEmployees();
-            MongoCollection employeeCollection = db.GetCollection("Employees");
+            var employeeCollection = db.GetCollection("Employees");
             employeeCollection.InsertBatch<Employee>(employees);
         }
 
@@ -86,7 +86,6 @@ namespace CupOfCoffee.Data
                 new Product { Id = productId++, CategoryId = 2, Name = "Herbal Tea", SellPrice = 0.8m},
                 new Product { Id = productId++, CategoryId = 2, Name = "Fruit Tea", SellPrice = 0.9m},
                 new Product { Id = productId++, CategoryId = 2, Name = "Masala Chai", SellPrice = 1.5m},
-                new Product { Id = productId++, CategoryId = 2, Name = "Masala Chai", SellPrice = 1m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Zagorka", SellPrice = 2m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Shumensko", SellPrice = 1.8m},
                 new Product { Id = productId++, CategoryId = 3, Name = "Ariana Radler", SellPrice = 1.6m},
@@ -141,6 +140,20 @@ namespace CupOfCoffee.Data
                 new Customer { Id = customerId++, Name = "Ivailo Kenov", CustomerStatusId = 2 },
                 new Customer { Id = customerId++, Name = "Doncho Minkov", CustomerStatusId = 2 },
                 new Customer { Id = customerId++, Name = "Nikolay Kostov", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Evlogi Hristov", CustomerStatusId = 2},
+                new Customer { Id = customerId++, Name = "Georgi Georgiev", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Pesho Peshev", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Ivancho Minkov", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Pavel Kolev", CustomerStatusId = 2 },
+                new Customer { Id = customerId++, Name = "Paco Hristov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Dimitar Kirov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Lionel Messi", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Marko Jekov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Manuel Neuer", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Orlin Malinov", CustomerStatusId = 2 },
+                new Customer { Id = customerId++, Name = "Varadin Varadinov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Nenka Frenska", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Cristiano Ronaldo", CustomerStatusId = 3 }
             };
 
             return customers;

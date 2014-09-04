@@ -1,14 +1,12 @@
-﻿using CupOfCoffee.Models;
-using MongoDB.Driver;
-using MongoDB.Bson;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CupOfCoffee.Controllers.DataLoader
+﻿namespace CupOfCoffee.Controllers.DataLoader
 {
+    using System.Linq;
+   
+    using MongoDB.Driver;
+   
+    using CupOfCoffee.Data;
+    using CupOfCoffee.Models;
+
     public static class MongoDbExtractor
     {
         public static MongoDatabase db;
@@ -22,9 +20,51 @@ namespace CupOfCoffee.Controllers.DataLoader
             db = server.GetDatabase("CupOfCoffee");
         }
 
-        public static void ExtractToSqlServer()
+        public static void ExtractDataToSqlServer()
         {
-            MongoCollection productCollection = db.GetCollection<Product>("Products");
+            var sqlDb = new CupOfCoffeeContext();
+
+            using (sqlDb)
+            {
+                var productCollection = db.GetCollection<Product>("Products");
+                var products = productCollection.FindAll();
+                var categoryCollection = db.GetCollection<Category>("Categories");
+                var categories = categoryCollection.FindAll();
+
+                foreach (var category in categories)
+                {
+                    category.Products = products.Where(product => product.CategoryId == category.Id).ToList();
+                    sqlDb.Categories.Add(category);
+                }
+
+                sqlDb.SaveChanges();
+
+                var employeeCollection = db.GetCollection<Employee>("Employees");
+                var employees = employeeCollection.FindAll();
+                var positionCollection = db.GetCollection<Position>("Positions");
+                var positions = positionCollection.FindAll();
+
+                foreach (var position in positions)
+                {
+                    position.Employees = employees.Where(employee => employee.PositionId == position.Id).ToList();
+                    sqlDb.Positions.Add(position);
+                }
+
+                sqlDb.SaveChanges();
+
+                var customerCollection = db.GetCollection<Customer>("Customers");
+                var customers = customerCollection.FindAll();
+                var customerStatusCollection = db.GetCollection<CustomerStatus>("CustomerStatuses");
+                var customerStatuses = customerStatusCollection.FindAll();
+
+                foreach (var status in customerStatuses)
+                {
+                    status.Customers = customers.Where(customer => customer.CustomerStatusId == status.Id).ToList();
+                    sqlDb.CustomerStatuses.Add(status);
+                }
+
+                sqlDb.SaveChanges();
+            }
         }
     }
 }

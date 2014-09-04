@@ -106,7 +106,6 @@
                     {
                         Console.WriteLine("Could not parse excel file for parsing -> InvalidOperationException");
                         return false;
-                        //throw new InvalidOperationException("Could not parse excel file for parsing -> InvalidOperationException");
                     }
                 }
             }

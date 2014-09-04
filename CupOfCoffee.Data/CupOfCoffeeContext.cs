@@ -1,10 +1,8 @@
 
 namespace CupOfCoffee.Data
 {
-    using System;
     using System.Data.Entity;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Linq;
+
     using CupOfCoffee.Models;
     using CupOfCoffee.Data.Migrations;
 
@@ -17,14 +15,23 @@ namespace CupOfCoffee.Data
         }
 
         public virtual IDbSet<CustomerFeedback> CustomerFeedbacks { get; set; }
+
         public virtual IDbSet<Customer> Customers { get; set; }
+
         public virtual IDbSet<CustomerStatus> CustomerStatuses { get; set; }
+
         public virtual IDbSet<Employee> Employees { get; set; }
+
         public virtual IDbSet<MonthlySalary> MonthlySalaries { get; set; }
+
         public virtual IDbSet<OrderDetail> OrderDetails { get; set; }
+
         public virtual IDbSet<Order> Orders { get; set; }
+
         public virtual IDbSet<Position> Positions { get; set; }
+
         public virtual IDbSet<Product> Products { get; set; }
+
         public virtual IDbSet<Category> Categories { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

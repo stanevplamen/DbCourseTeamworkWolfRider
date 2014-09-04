@@ -1,16 +1,13 @@
 ﻿namespace CupOfCoffee.Controllers.SalaryReports
 {
-    using CupOfCoffee.Data;
     using System;
     using System.Collections.Generic;
-    using System.Data.Entity;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
+
+    using CupOfCoffee.Data;
 
     public class SalaryCalculator
     {
-
         public static IList<EmployeeSalary> Calculate(CupOfCoffeeContext context)
         {
             var salaries = new List<EmployeeSalary>();
@@ -23,9 +20,9 @@
                 EmployeeID = e.Id,
                 Name = e.Name,
                 BaseSalary = e.Position.BaseSalary,
-                ExperienceBonus = (e.HireDate.Year - DateTime.Now.Year) * 20,
-                FeedbackBonus = e.CustomerFeedbacks.Where(cf => cf.Order.OrderDate > lastMonthDate).Average(cf => (decimal)cf.Evaluation) * 20,
-                TurnoverBonus = e.Orders.Where(
+                ExperienceBonus = ((Nullable<decimal>)(DateTime.Now.Year - e.HireDate.Year) ?? 0) * 20,
+                FeedbackBonus = ((Nullable<decimal>)e.CustomerFeedbacks.Where(cf => cf.Order.OrderDate > lastMonthDate).Average(cf => (decimal)cf.Evaluation) ?? 0) * 20,
+                TurnoverBonus = ((Nullable<decimal>)e.Orders.Where(
                         o => o.OrderDate > lastMonthDate
                     )
                         .Sum(
@@ -40,14 +37,15 @@
                                     )
                                 )
                             )
-                        ) * 0.1m
+                        )
+                    ?? 0) * 0.1m
             });
 
             salaries = results.ToList();
 
             foreach (var salary in salaries)
             {
-                salary.TotalSalary = salary.BaseSalary + salary.ExperienceBonus + salary.FeedbackBonus + salary.TurnoverBonus;
+                salary.TotalSalary = salary.BaseSalary + (decimal)salary.ExperienceBonus + (decimal)salary.FeedbackBonus + (decimal)salary.TurnoverBonus;
             }
 
             return salaries;

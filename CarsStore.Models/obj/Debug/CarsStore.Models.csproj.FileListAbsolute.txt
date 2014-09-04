@@ -1,9 +1,0 @@
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\CarsStore.Models.dll
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\CarsStore.Models.pdb
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Bson.dll
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Driver.dll
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Bson.xml
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\bin\Debug\MongoDB.Driver.xml
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\obj\Debug\CarsStore.Models.csprojResolveAssemblyReference.cache
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\obj\Debug\CarsStore.Models.dll
-C:\Users\user\Documents\Visual Studio 2012\Projects\DbTeamworkWolfRider\CarsStore.Models\obj\Debug\CarsStore.Models.pdb

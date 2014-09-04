@@ -1,15 +1,20 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
-    using CupOfCoffee.Controllers.XlmReportsParser;
-    using CupOfCoffee.Controllers.MySqlReports;
-    using CupOfCoffee.Controllers.SalaryReports;
-    using CupOfCoffee.Data;
-    using CupOfCoffee.MySQL.Models;
     using System;
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Controls;
-    using Newtonsoft.Json;
+    using System.Linq;
+
+    using CupOfCoffee.Controllers.DataLoader;
+    using CupOfCoffee.Controllers.FinalReport;
+    using CupOfCoffee.Controllers.MySqlReports;
+    using CupOfCoffee.Controllers.SalaryReports;
+    using CupOfCoffee.Controllers.XlmReportsParser;
+    using CupOfCoffee.Data;
+    using CupOfCoffee.MySQL.Models;
+    using System.Data.Entity;
+    using CupOfCoffee.SQLite.Data.Migrations;
 
     /// <summary>
     /// Interaction logic for Menu.xaml
@@ -19,25 +24,26 @@
         public Menu()
         {
             InitializeComponent();
+            DatabasePopulator.Seed();
         }
 
         private void btnDataLoader_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
-            if (true)
+            try
             {
+                MongoDbExtractor.ExtractDataToSqlServer();
                 MessageBox.Show("The orders were loaded successfully!",
-                    "Loaded successfully",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                   "Loaded successfully",
+                   MessageBoxButton.OK,
+                   MessageBoxImage.Information);
             }
-            //else
-            //{
-            //    MessageBox.Show("Cannot load orders!",
-            //       "Loaded failed",
-            //       MessageBoxButton.OK,
-            //       MessageBoxImage.Error);
-            //}
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot load orders!",
+                  "Loaded failed",
+                  MessageBoxButton.OK,
+                  MessageBoxImage.Error);
+            }
         }
 
         private void btnOrderLoader_Click(object sender, RoutedEventArgs e)
@@ -49,58 +55,125 @@
 
         private void btnFeedbackLoader_Click(object sender, RoutedEventArgs e)
         {
-            string pathToFile = "..\\..\\..\\XMLReports\\Feedbacks.xml";
-            CupOfCoffeeContext context = new CupOfCoffeeContext();
-            var feedbacks = XmlParser.GenerateFeedbacksFromXml(pathToFile);
-            foreach (var feedback in feedbacks)
-            {
-                context.CustomerFeedbacks.Add(feedback);
-            }
-            context.SaveChanges();
+            this.Visibility = Visibility.Hidden;
+            var mainWindow = StartWindow.GetMainWindow(this);
+            mainWindow.feedbackLoader.Visibility = Visibility.Visible;
         }
 
         private void btnSalaryCalculator_Click(object sender, RoutedEventArgs e)
         {
             using (var context = new CupOfCoffeeContext())
             {
-                var pdfFile = new PdfFile();
-                pdfFile.filename = "..\\..\\..\\PDFReport\\employee-sallaries.pdf";
-                pdfFile.title = "Report: Employees sallaries";
-                pdfFile.data = SalaryCalculator.Calculate(context);
+                try
+                {
+                    var pdfFile = new PdfFile();
+                    pdfFile.filename = "..\\..\\..\\PDFReport\\employee-sallaries.pdf";
+                    pdfFile.title = "Report: Employees sallaries";
+                    pdfFile.data = SalaryCalculator.Calculate(context);
 
-                PdfCreator.Create(pdfFile);
+                    PdfCreator.Create(pdfFile);
 
-                SalaryRecorder.Insert(pdfFile.data, context);
+                    SalaryRecorder.Insert(pdfFile.data, context);
 
-                var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
-                var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pdfFile.filename);
-                Process.Start(adobeInfo);
+                    //var pathToAcroRd32 = Environment.GetEnvironmentVariable("ProgramFiles") + @"\Adobe\Reader 11.0\Reader\AcroRd32.exe";
+                    //var adobeInfo = new ProcessStartInfo(pathToAcroRd32, pdfFile.filename);
+
+                    MessageBox.Show("The report for employees was successfully generated!",
+                        "Generated successfully",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Information);
+
+                    Process.Start(pdfFile.filename);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot generate the report for employees!",
+                       "Generation failed",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+                }
             }
         }
 
         private void btnProductIncomeCalculator_Click(object sender, RoutedEventArgs e)
         {
-            string path = "..\\..\\..\\Json-Reports\\";
-            CupOfCoffeeContext context = new CupOfCoffeeContext();
-            var reports = ProductsReportsLoader.GetProductsSaleInfo(context);
-            ProductsReportsLoader.GenerateJsonReports(reports, path);
+            try
+            {
+                string path = "..\\..\\..\\Json-Reports\\";
+                CupOfCoffeeContext context = new CupOfCoffeeContext();
+                var reports = ProductsReportsLoader.GetProductsSaleInfo(context);
+                ProductsReportsLoader.GenerateJsonReports(reports, path);
 
-            MySqlModel mySqlCOntext = new MySqlModel();
-            ProductsReportsLoader.AddReports(reports, mySqlCOntext);
-            Process.Start(path);
+                MySqlModel mySqlCOntext = new MySqlModel();
+                ProductsReportsLoader.AddReports(reports, mySqlCOntext);
+
+                MessageBox.Show("The products reports were successfully generated!",
+                     "Generated successfully",
+                     MessageBoxButton.OK,
+                     MessageBoxImage.Information);
+
+                Process.Start(path);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot generate the products reports!",
+                   "Generation failed",
+                   MessageBoxButton.OK,
+                   MessageBoxImage.Error);
+            }           
         }
 
         private void btnSoldProductDisplayer_Click(object sender, RoutedEventArgs e)
         {
-            var path = "..\\..\\..\\XMLReport\\";
-            var reports = XmlParser.GetDailyTurnoverByWaitressReports();
-            XmlParser.GenerateDailyTurnoverXmlReport(reports, path, "DailyReports.xml");
-            Process.Start(path);
+            try
+            {
+                var path = "..\\..\\..\\XMLReport\\";
+                var reports = XmlParser.GetDailyTurnoverByWaitressReports();
+                XmlParser.GenerateDailyTurnoverXmlReport(reports, path, "DailyReports.xml");
+
+                MessageBox.Show("The daily reports were successfully generated!",
+                     "Generated successfully",
+                     MessageBoxButton.OK,
+                     MessageBoxImage.Information);
+
+                Process.Start(path);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot generate the daily reports!",
+                    "Generation failed",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            } 
         }
 
         private void btnTotalProfitCalculator_Click(object sender, RoutedEventArgs e)
         {
-            //TODO: not implemented
+            try
+            {
+                var path = "total-profit.xlsx";
+                var mySqlCOntext = new MySqlModel();
+                var products = ProductsReportsLoader.GetReportsFromMySql(mySqlCOntext);
+
+                // TODO: Change it with entity framework
+                var vendorsProduct = SqliteParser.GetVendorsProducts();
+                ExcelGenerator.Generate(products, vendorsProduct, path);
+
+                MessageBox.Show("The total profit report was successfully generated!",
+                  "Generated successfully",
+                  MessageBoxButton.OK,
+                  MessageBoxImage.Information);
+
+                Process.Start(path);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Cannot generate the total profit report!",
+                  "Generation failed",
+                  MessageBoxButton.OK,
+                  MessageBoxImage.Error);
+            }
+            
         }
     }
 }

@@ -1,22 +1,23 @@
 ﻿namespace CupOfCoffee.Controllers.SalaryReports
 {
-    using iTextSharp.text;
-    using iTextSharp.text.html.simpleparser;
-    using iTextSharp.text.pdf;
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+
+    using iTextSharp.text;
+    using iTextSharp.text.html.simpleparser;
+    using iTextSharp.text.pdf;
 
     public static class PdfCreator
     {
         public static void Create(PdfFile content)
         {
-            Document document = new Document();
+            var document = new Document();
 
             PdfWriter.GetInstance(document, new FileStream(content.filename, FileMode.Create));
             document.Open();
 
-            StringBuilder builder = new StringBuilder();
+            var builder = new StringBuilder();
 
             builder.Append("<table border='1'><head>");
             builder.Append("<tr><th colspan=\"4\">" + content.title + "</th></tr></thead></table>");
@@ -34,9 +35,10 @@
                 builder.Append(string.Format("<tr><td colspan=\"4\">Total Salary: {0:0.00}$</td></tr></table><br>", employee.TotalSalary));
             }
 
-            string htmlText = builder.ToString();
+            var htmlText = builder.ToString();
 
-            List<IElement> htmlarraylist = HTMLWorker.ParseToList(new StringReader(htmlText), null);
+            var htmlarraylist = HTMLWorker.ParseToList(new StringReader(htmlText), null);
+            
             for (int k = 0; k < htmlarraylist.Count; k++)
             {
                 document.Add((IElement)htmlarraylist[k]);

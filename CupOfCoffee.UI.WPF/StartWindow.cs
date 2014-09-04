@@ -7,7 +7,7 @@
         public static MainWindow GetMainWindow(DependencyObject dependancyObject)
         {
             MainWindow mainWindow = null;
-            Window parentWindow = Window.GetWindow(dependancyObject);
+            var parentWindow = Window.GetWindow(dependancyObject);
 
             if (parentWindow != null)
             {

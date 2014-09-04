@@ -1,8 +1,8 @@
 {
   "ReportID": 0,
   "ProductID": 1,
-  "ProductName": "Mocha",
+  "ProductName": "Espresso",
   "ProductCategory": "Coffee",
-  "TotalIncome": 236.000000,
-  "TotalQuantitySold": 118
+  "TotalIncome": 7.998000,
+  "TotalQuantitySold": 8
 }

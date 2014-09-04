@@ -1,9 +1,10 @@
 ﻿namespace CupOfCoffee.Controllers.SalaryReports
 {
-    using CupOfCoffee.Data;
-    using CupOfCoffee.Models;
     using System;
     using System.Collections.Generic;
+
+    using CupOfCoffee.Data;
+    using CupOfCoffee.Models;
 
     public static class SalaryRecorder
     {

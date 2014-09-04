@@ -1,10 +1,11 @@
 ﻿namespace CupOfCoffee.UI.WPF.View
 {
-    using CupOfCoffee.Controllers.ReportLoader;
     using System;
     using System.Collections.Generic;
     using System.Windows;
     using System.Windows.Controls;
+
+    using CupOfCoffee.Controllers.ReportLoader;
 
     /// <summary>
     /// Interaction logic for OrdersLoader.xaml

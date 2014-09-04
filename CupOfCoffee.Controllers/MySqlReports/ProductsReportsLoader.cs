@@ -1,17 +1,16 @@
-﻿using CupOfCoffee.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using System.IO;
-using CupOfCoffee.MySQL.Models;
-using Telerik.OpenAccess;
-
-namespace CupOfCoffee.Controllers.MySqlReports
+﻿namespace CupOfCoffee.Controllers.MySqlReports
 {
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Linq;
 
+    using Telerik.OpenAccess;
+    using Newtonsoft.Json;
+
+    using CupOfCoffee.Data;
+    using CupOfCoffee.MySQL.Models;
+    
     public static class ProductsReportsLoader
     {
         public static IList<ProductReport> GetProductsSaleInfo(CupOfCoffeeContext context)
@@ -21,8 +20,8 @@ namespace CupOfCoffee.Controllers.MySqlReports
                 ProductID = p.Id,
                 ProductName = p.Name,
                 ProductCategory = p.Category.Name,
-                TotalIncome = p.OrderDetails.Sum(od => od.Quantity * (p.SellPrice - (od.HappyHour ? 0 : p.SellPrice * 0.25m) - (p.SellPrice * (od.Order.Customer.CustomerStatus.Discount / 100)))),
-                TotalQuantitySold = p.OrderDetails.Sum(g => g.Quantity)
+                TotalIncome = (Nullable<decimal>)p.OrderDetails.Sum(od => od.Quantity * (p.SellPrice - (od.HappyHour ? 0 : p.SellPrice * 0.25m) - (p.SellPrice * (od.Order.Customer.CustomerStatus.Discount / 100)))) ?? 0,
+                TotalQuantitySold = (Nullable<int>)p.OrderDetails.Sum(g => g.Quantity) ?? 0
             }).ToList();
 
             return results;
@@ -30,10 +29,10 @@ namespace CupOfCoffee.Controllers.MySqlReports
 
         public static void GenerateJsonReports(IList<ProductReport> reports, string path)
         {
-            for (int i = 0; i < reports.Count; i++)
+            for (var i = 0; i < reports.Count; i++)
             {
-                string json = JsonConvert.SerializeObject(reports[i], Formatting.Indented);
-                string fileName = reports[i].ProductID + ".json";
+                var json = JsonConvert.SerializeObject(reports[i], Formatting.Indented);
+                var fileName = reports[i].ProductID + ".json";
 
                 using (var writer = new StreamWriter(path + fileName))
                 {
@@ -51,8 +50,21 @@ namespace CupOfCoffee.Controllers.MySqlReports
                 {
                     context.Add(report);
                 }
+
                 context.SaveChanges();
             }
+        }
+
+        public static IList<ProductReport> GetReportsFromMySql(MySqlModel context)
+        {
+            var reports = new List<ProductReport>();
+
+            using (context)
+            {
+                reports = context.GetAll<ProductReport>().ToList();
+            }
+
+            return reports;
         }
 
         private static void UpdateDatabase()
@@ -67,6 +79,7 @@ namespace CupOfCoffee.Controllers.MySqlReports
         private static void EnsureDB(ISchemaHandler schemaHandler)
         {
             string script = null;
+           
             if (schemaHandler.DatabaseExists())
             {
                 script = schemaHandler.CreateUpdateDDLScript(null);

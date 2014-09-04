@@ -1,15 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CupOfCoffee.Controllers.XlmReportsParser
+﻿namespace CupOfCoffee.Controllers.XlmReportsParser
 {
+    using System;
+
     public class DailyWaitressReport
     {
         public DateTime? Date { get; set; }
+
         public string Name { get; set; }
+
         public decimal Turnover { get; set; }
     }
 }
