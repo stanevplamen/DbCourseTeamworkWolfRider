@@ -10,7 +10,7 @@
         {
             try
             {
-                string[] currentDirFiles = Directory.GetFiles(currentPath, fileExtension);
+                var currentDirFiles = Directory.GetFiles(currentPath, fileExtension);
                 files.AddRange(currentDirFiles);
             }
             catch (UnauthorizedAccessException e)
@@ -18,7 +18,7 @@
                 return;
             }
 
-            string[] curretDirDirectories = Directory.GetDirectories(currentPath);
+            var curretDirDirectories = Directory.GetDirectories(currentPath);
 
             foreach (var dir in curretDirDirectories)
             {

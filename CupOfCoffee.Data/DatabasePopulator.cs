@@ -1,14 +1,10 @@
-﻿using CupOfCoffee.Models;
-using MongoDB.Bson;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CupOfCoffee.Data
+﻿namespace CupOfCoffee.Data
 {
+    using CupOfCoffee.Models;
+    using MongoDB.Driver;
+    using System;
+    using System.Collections.Generic;
+
     public static class DatabasePopulator
     {
         private static MongoDatabase db;

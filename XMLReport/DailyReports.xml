@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="windows-1251"?>
-<daily-reports>
-  <report date="2.9.2014 г.">
-    <waitress name="Didi Jeliazkova" turnover="11.4000" />
-    <waitress name="Viki Hristova" turnover="11.4000" />
-  </report>
-  <report date="3.9.2014 г.">
-    <waitress name="Didi Jeliazkova" turnover="11.4000" />
-    <waitress name="Viki Hristova" turnover="11.4000" />
-  </report>
-</daily-reports>
+<daily-reports />

@@ -1,15 +1,12 @@
-﻿using CupOfCoffee.Models;
-using MongoDB.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Driver.Linq;
-using CupOfCoffee.Data;
-
-namespace CupOfCoffee.Controllers.DataLoader
+﻿namespace CupOfCoffee.Controllers.DataLoader
 {
+    using System.Linq;
+   
+    using MongoDB.Driver;
+   
+    using CupOfCoffee.Data;
+    using CupOfCoffee.Models;
+
     public static class MongoDbExtractor
     {
         public static MongoDatabase db;

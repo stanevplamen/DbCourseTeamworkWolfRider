@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8BEB18
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CupOfCoffee.SQLite.Data", "CupOfCoffee.SQLite.Data\CupOfCoffee.SQLite.Data.csproj", "{8FB78832-15C1-4366-8E4E-9646D7842294}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +48,10 @@ Global
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{667F9FFF-8D13-458C-993D-9E5779E08CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8FB78832-15C1-4366-8E4E-9646D7842294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8FB78832-15C1-4366-8E4E-9646D7842294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8FB78832-15C1-4366-8E4E-9646D7842294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8FB78832-15C1-4366-8E4E-9646D7842294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

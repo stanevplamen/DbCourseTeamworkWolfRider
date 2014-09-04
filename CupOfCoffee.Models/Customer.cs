@@ -1,10 +1,11 @@
 namespace CupOfCoffee.Models
 {
-    using MongoDB.Bson.Serialization.Attributes;
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+
+    using MongoDB.Bson.Serialization.Attributes;
 
     public class Customer
     {

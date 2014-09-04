@@ -1,7 +1,7 @@
-﻿using System.Windows;
-
-namespace CupOfCoffee.UI.WPF
+﻿namespace CupOfCoffee.UI.WPF
 {
+    using System.Windows;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

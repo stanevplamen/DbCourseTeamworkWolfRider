@@ -1,22 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CupOfCoffee.Models;
-using CupOfCoffee.Data;
-using Newtonsoft.Json;
-using System.Data.Entity;
-using System.Xml;
-using System.Text;
-
-namespace CupOfCoffee.Controllers.XlmReportsParser
+﻿namespace CupOfCoffee.Controllers.XlmReportsParser
 {
+    using System.Collections.Generic;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Text;
+    using System.Xml;
+
+    using CupOfCoffee.Data;
+    using CupOfCoffee.Models;
+
     public class XmlParser
     {
         public static List<DailyWaitressReport> GetDailyTurnoverByWaitressReports()
         {
-            CupOfCoffeeContext context = new CupOfCoffeeContext();
+            var context = new CupOfCoffeeContext();
             var results = context.Orders
                 .GroupBy(o => new { Date = DbFunctions.TruncateTime(o.OrderDate), Name = o.Employee.Name })
                 .Select(gr => new DailyWaitressReport()
@@ -32,23 +29,23 @@ namespace CupOfCoffee.Controllers.XlmReportsParser
 
         public static List<CustomerFeedback> GenerateFeedbacksFromXml(string path)
         {
-            CupOfCoffeeContext context = new CupOfCoffeeContext();
+            var context = new CupOfCoffeeContext();
 
-            XmlDocument document = new XmlDocument();
+            var document = new XmlDocument();
             document.Load(path);
-            XmlNode root = document.DocumentElement;
+            var root = document.DocumentElement;
 
-            List<CustomerFeedback> feedbacks = new List<CustomerFeedback>();
+            var feedbacks = new List<CustomerFeedback>();
 
             foreach (XmlNode order in root.ChildNodes)
             {
-                int orderId = int.Parse(order.Attributes["id"].Value);
-                int employeeId = context.Orders.Where(o => o.Id == orderId).Select(e=>e.EmployeeId).FirstOrDefault();
+                var orderId = int.Parse(order.Attributes["id"].Value);
+                var employeeId = context.Orders.Where(o => o.Id == orderId).Select(e => e.EmployeeId).FirstOrDefault();
                 foreach (XmlNode feedback in order.ChildNodes)
                 {
-                    int evaluationValue = int.Parse(feedback.Attributes["evaluation"].Value);
-                    CustomerEvaluation evaluation = (CustomerEvaluation)evaluationValue;
-                    CustomerFeedback fb = new CustomerFeedback()
+                    var evaluationValue = int.Parse(feedback.Attributes["evaluation"].Value);
+                    var evaluation = (CustomerEvaluation)evaluationValue;
+                    var fb = new CustomerFeedback()
                     {
                         CustomerId = int.Parse(feedback.Attributes["customerId"].Value),
                         EmployeeId = employeeId,
@@ -66,19 +63,22 @@ namespace CupOfCoffee.Controllers.XlmReportsParser
 
         public static void GenerateDailyTurnoverXmlReport(List<DailyWaitressReport> dailyReports, string path, string fileName)
         {
-            string totalPath = path + fileName;
-            Encoding encoding = Encoding.GetEncoding("windows-1251");
+            var totalPath = path + fileName;
+            var encoding = Encoding.GetEncoding("windows-1251");
 
-            using (XmlTextWriter writer = new XmlTextWriter(totalPath, encoding))
+            using (var writer = new XmlTextWriter(totalPath, encoding))
             {
                 writer.Formatting = System.Xml.Formatting.Indented;
 
                 writer.WriteStartDocument();
                 writer.WriteStartElement("daily-reports");
+                
                 var lastDate = dailyReports[0].Date.Value;
                 var currentDate = lastDate;
+                
                 writer.WriteStartElement("report");
                 writer.WriteAttributeString("date", dailyReports[0].Date.Value.Date.ToShortDateString());
+                
                 foreach (var report in dailyReports)
                 {
                     currentDate = report.Date.Value;
@@ -93,8 +93,10 @@ namespace CupOfCoffee.Controllers.XlmReportsParser
                     {
                         WriteWaitress(writer, report);
                     }
+
                     lastDate = currentDate;
                 }
+
                 writer.WriteEndElement();
                 writer.WriteEndDocument();
             }

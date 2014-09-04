@@ -1,24 +1,15 @@
-﻿using CupOfCoffee.Controllers.XlmReportsParser;
-using CupOfCoffee.Data;
-using Microsoft.Win32;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace CupOfCoffee.UI.WPF.View
+﻿namespace CupOfCoffee.UI.WPF.View
 {
+    using System;
+    using System.Windows;
+    using System.Windows.Controls;
+
+    using Microsoft.Win32;
+    using Newtonsoft.Json;
+
+    using CupOfCoffee.Controllers.XlmReportsParser;
+    using CupOfCoffee.Data;
+
     /// <summary>
     /// Interaction logic for FeedbackLoader.xaml
     /// </summary>
