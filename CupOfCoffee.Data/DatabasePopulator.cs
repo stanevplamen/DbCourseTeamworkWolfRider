@@ -23,7 +23,7 @@
             feedbackCollection.InsertBatch<CustomerFeedback>(feedbacks);
         }
 
-        public static void Seed() 
+        public static void Seed()
         {
             db.Drop();
 
@@ -140,6 +140,20 @@
                 new Customer { Id = customerId++, Name = "Ivailo Kenov", CustomerStatusId = 2 },
                 new Customer { Id = customerId++, Name = "Doncho Minkov", CustomerStatusId = 2 },
                 new Customer { Id = customerId++, Name = "Nikolay Kostov", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Evlogi Hristov", CustomerStatusId = 2},
+                new Customer { Id = customerId++, Name = "Georgi Georgiev", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Pesho Peshev", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Ivancho Minkov", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Pavel Kolev", CustomerStatusId = 2 },
+                new Customer { Id = customerId++, Name = "Paco Hristov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Dimitar Kirov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Lionel Messi", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Marko Jekov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Manuel Neuer", CustomerStatusId = 3 },
+                new Customer { Id = customerId++, Name = "Orlin Malinov", CustomerStatusId = 2 },
+                new Customer { Id = customerId++, Name = "Varadin Varadinov", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Nenka Frenska", CustomerStatusId = 1 },
+                new Customer { Id = customerId++, Name = "Cristiano Ronaldo", CustomerStatusId = 3 }
             };
 
             return customers;
